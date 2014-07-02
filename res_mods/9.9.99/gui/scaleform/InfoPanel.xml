@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ip>	<!-- Автор: Shtys -->
+	<infoPanel>	<!-- Глобальные настройки панели информации о цели -->
+		<arcade visible="true">		<!-- Аркадный прицел -->
+			<location x="55" y="-90"/>
+			<delay>10</delay>
+		</arcade>
+		<sniper visible="true">		<!-- Снайперский прицел -->
+			<location x="55" y="-30"/>
+			<delay>10</delay>
+		</sniper>		
+		<strategic visible="true">	<!-- Артиллерийский прицел -->
+			<location x="55" y="-30"/>
+			<delay>10</delay>
+		</strategic>		
+		<postmortem visible="true">	<!-- Посмертный прицел -->
+			<location x="55" y="-30"/>
+			<delay>10</delay>
+		</postmortem>		
+	</infoPanel>
+	<background alpha="0">	<!-- Настройка фона панели -->
+		<location x="-85" y="-123"/>
+		<scale x="85" y="118"/>
+	</background>	
+
+	<targetName visible="false">	<!-- Настройка названия танка цели -->
+		<location x="-80" y="-120"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="300" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{target}}</format>
+	</targetName>
+	<gunName visible="false">	<!-- Настройка названия орудия танка цели -->
+		<location x="-80" y="110"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="300" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{target-gun}}</format>
+	</gunName>
+	<gunReload visible="false">	<!-- Настройка примерного времени перезарядки орудия танка цели (с досылателем и 110% экипажем) -->
+		<location x="-80" y="-102"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{target-reload-10}} сек</format>
+	</gunReload>
+	<visionRadius visible="false">	<!-- Настройка радиуса обзора танка цели -->
+		<location x="-80" y="0"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>Обзор:{{t}}{{vision}} м</format>
+	</visionRadius>
+	<turretArmorF visible="false">	<!-- Настройка лобового бронирования башни -->
+		<location x="-80" y="18"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>Башня:{{t}}{{turret-front}}{{t}}{{turret-side}}{{t}}{{turret-back}}</format>
+	</turretArmorF>
+	<turretArmorS visible="false">	<!-- Настройка бортового бронирования башни -->
+		<location x="-55" y="0"/>
+		<text font="Cuprum" size="15" color="0xFFFF00" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{turret-side}}</format>
+	</turretArmorS>
+	<turretArmorB visible="false">	<!-- Настройка бронирования кормы башни -->
+		<location x="-30" y="0"/>
+		<text font="Cuprum" size="15" color="0x00FF00" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{turret-back}}</format>
+	</turretArmorB>
+	<hullArmorF visible="false">	<!-- Настройка лобового бронирования корпуса -->
+		<location x="-80" y="36"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>Корпус:{{t}}{{hull-front}}{{t}}{{hull-side}}{{t}}{{hull-back}}</format>
+	</hullArmorF>
+	<hullArmorS visible="false">	<!-- Настройка бортового бронирования корпуса -->
+		<location x="-105" y="85"/>
+		<text font="Cuprum" size="15" color="0xFFFF00" alpha="100" align="right" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{hull-side}}</format>
+	</hullArmorS>
+	<hullArmorB visible="false">	<!-- Настройка бронирования кормы корпуса -->
+		<location x="-80" y="85"/>
+		<text font="Cuprum" size="15" color="0x00FF00" alpha="100" align="right" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{hull-back}}</format>
+	</hullArmorB>
+	<shellType1 visible="false">	<!-- Настройка типа первого снаряда -->
+		<location x="-80" y="54"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>Тип:{{t}}{{t}}{{type-1}}{{t}}{{type-2}}{{t}}{{type-3}}</format>
+	</shellType1>
+	<shellType2 visible="false">	<!-- Настройка типа второго снаряда -->
+		<location x="-140" y="20"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{type-2}}</format>
+	</shellType2>
+	<shellType3 visible="false">	<!-- Настройка типа третьего снаряда -->
+		<location x="-110" y="20"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{type-3}}</format>
+	</shellType3>
+	<shellDamage1 visible="false">	<!-- Настройка урона первого типа снаряда -->
+		<location x="-80" y="72"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>Урон:{{t}}{{t}}{{damage-1}}{{t}}{{damage-2}}{{t}}{{damage-3}}</format>
+	</shellDamage1>
+	<shellDamage2 visible="false">	<!-- Настройка урона второго типа снаряда -->
+		<location x="-140" y="50"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{damage-2}}</format>
+	</shellDamage2>
+	<shellDamage3 visible="false">	<!-- Настройка урона третьего типа снаряда -->
+		<location x="-110" y="40"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{damage-3}}</format>
+	</shellDamage3>
+	<shellPower1 visible="false">	<!-- Настройка бронепробиваемости первого типа снаряда -->
+		<location x="-80" y="90"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>Пробитие:{{t}}{{power-1}}{{t}}{{power-2}}{{t}}{{power-3}}</format>
+	</shellPower1>
+	<shellPower2 visible="false">	<!-- Настройка бронепробиваемости второго типа снаряда -->
+		<location x="-140" y="60"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{power-2}}</format>
+	</shellPower2>
+	<shellPower3 visible="false">	<!-- Настройка бронепробиваемости третьего типа снаряда -->
+		<location x="-110" y="60"/>
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{power-3}}</format>
+	</shellPower3>
+
+	<emptyField visible="true">	<!-- Свободное поле -->
+		<location x="0" y="0"/>
+		<text font="Cuprum" size="12" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="5" width="256" height="135"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format>{{target}}{{n}}   {{target-gun}}{{n}}{{target-reload-100}} сек({{damage-1}}/{{power-1}})</format>
+	</emptyField>	
+	<tankIcon visible="false" alpha="100">	<!-- Настройка иконки танка -->
+		<location x="-80" y="-100"/>
+		<common large="true"/>
+	</tankIcon>	
+	<shellType>	<!-- Настройка отображения типов снарядов -->
+		<AP>ББ</AP> <!-- Бронебойный -->
+		<CR>БП</CR> <!-- Подкалиберный -->
+		<HC>КС</HC> <!-- Кумулятивный -->
+		<HE>ОФ</HE> <!-- Осколочно-фугасный -->
+	</shellType>
+</ip>
+	<!-- Список возможных макросов:
+	{{n}}					- переход на новую строку
+	{{t}}					- фиксированный отступ (равнозначен TAB)
+	{{target}}				- название танка выбранной цели
+	{{target-gun}}			- названия орудия танка цели
+	{{target-reload-100}}	- примерное время перезарядки орудия танка цели с округлением до сотых (с досылателем и 110% экипажем)
+	{{target-reload-10}}	- примерное время перезарядки орудия танка цели с округлением до десятых (с досылателем и 110% экипажем)
+	{{target-reload}}		- примерное время перезарядки орудия танка цели с округлением до целых (с досылателем и 110% экипажем)
+	{{vision}}				- радиус обзора танка цели (для 100% экипажа)
+	{{hull-front}}			- лобовое бронирование корпуса танка цели
+	{{hull-side}}			- бортовое бронирование корпуса танка цели
+	{{hull-back}}			- бронирование кормы корпуса танка цели
+	{{turret-front}}		- лобовое бронирование башни танка цели
+	{{turret-side}}			- бортовое бронирование башни танка цели
+	{{turret-back}}			- бронирование кормы башни танка цели
+	{{damage-1}}			- урон первого типа снаряда танка цели
+	{{damage-2}}			- урон второго типа снаряда танка цели
+	{{damage-3}}			- урон третьего типа снаряда танка цели
+	{{power-1}}				- бронепробиваемость первого типа снаряда танка цели
+	{{power-2}}				- бронепробиваемость второго типа снаряда танка цели
+	{{power-3}}				- бронепробиваемость третьего типа снаряда танка цели
+	{{type-1}}				- первый тип снаряда танка цели
+	{{type-2}}				- второй тип снаряда танка цели
+	{{type-3}}				- третий тип снаряда танка цели 
+296
+356
+60
+371
+15
+381
+10
+-->
