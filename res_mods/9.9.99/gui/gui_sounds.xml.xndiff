@@ -1,0 +1,9 @@
+--- gui_sounds.xml
++++ gui_sounds.xml
+@@ -5 +5,5 @@
+-	  <sixthsense>/voice/voice/sixthsense</sixthsense> <!-- —сылка на "лампочку" по умолчанию короткий сигнал, дл€ включени€ сигнала с таймером исправить на /voice/voice/sixthsense_a -->
++		<5secs>/locastan/locastan/RU/5secs</5secs>
++		<1min>/locastan/locastan/RU/1min</1min>
++		<3mins>/locastan/locastan/RU/3mins</3mins>
++		<30secs>/locastan/locastan/RU/30secs</30secs>
++		<sixthsense>/xvm/xvm/sixthsense</sixthsense>
