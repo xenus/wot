@@ -33,13 +33,13 @@
 		
 		<module>																		<!--Настройка модуле дополнительной индакации при повреждении. "yes" - для включения "no" - для выключения-->
 			<engine>yes</engine>														<!--Двигатель-->
-			<fuelTank>no</fuelTank>														<!--Баки-->
-			<radio>no</radio>															<!--Рация-->
-			<surveyingDevice>no</surveyingDevice>										<!--Триплекс-->
+			<fuelTank>yes</fuelTank>													<!--Баки-->
+			<radio>yes</radio>															<!--Рация-->
+			<surveyingDevice>yes</surveyingDevice>										<!--Триплекс-->
 			<ammoBay>yes</ammoBay>														<!--Боеукладка-->
-			<turretRotator>no</turretRotator>											<!--Башня-->
+			<turretRotator>yes</turretRotator>											<!--Башня-->
 			<gun>yes</gun>																<!--Орудие-->
-			<chassis>no</chassis>														<!--Гусеницы-->
+			<chassis>yes</chassis>														<!--Гусеницы-->
 		</module>
 	
 		<graphics>
@@ -57,12 +57,12 @@
 	</critPanelStyle>
 
 	<!--Настройка доп. панели ремонта при нажатии ctrl-->
-	<repairPanelStyle visible="true">
+	<repairPanelStyle visible="false">
 		<location x="0" y="0"/>															<!--Настройка расположения панели относительно центра экрана-->
 	</repairPanelStyle>
 
 	<!--Настройка УГН-->
-	<angleStyle visible="true">															
+	<angleStyle visible="false">															
 	
 		<spg visible="true">															<!--Настройка УГН ПТ-САУ-->
 			<size width="14" height="28"/>												<!--Настройка размера УГН-->
@@ -107,13 +107,13 @@
 	
 	<!--Настройка сообщения о последнем полученном повреждении-->
 	<hitStyle visible="true">
-		<location x="0" y="250"/>
-		<text font="Arial" size="40" color="0xFF0000" alpha="100" align="center"/> 
-		<filter size="2" angle="45" distance="0" color="0x000000" alpha="100" strength="150"/>
+		<location x="115" y="240"/>
+
+		<filter size="4" angle="45" distance="0" color="0x000000" alpha="100" strength="150"/>
 		<advanced>
-			<delay time="5"/>
-			<grid center="true" invert="true"/>											<!--Настройка центрирования координат по Х и инвертирования по У ("true"->да, "false"->нет)-->
-			<format><![CDATA[<font face='Arial' size='30' color='#FF0000'>-{{dmg-one}}<br>{{at-vehicle-short}}</font>]]></format>
+			<delay time="1000"/>
+			<grid center="false" invert="true"/>											<!--Настройка центрирования координат по Х и инвертирования по У ("true"->да, "false"->нет)-->
+			<format>-{{dmg-one}}</format>
 		</advanced>
 	</hitStyle>
 	
@@ -129,7 +129,7 @@
 	</fireStyle>
 	
 	<!--Настройка полосы ХП и надписей на ней-->
-	<hpBarStyle>
+	<hpBarStyle visible="true">
 		<size scale="1.0"/>
 		<location x="0" y="36"/>
 		
@@ -159,7 +159,7 @@
 		</hpStyle>
 		
 		<!--Настройка имени игрока-->
-		<playerStyle visible="true">
+		<playerStyle visible="false">
 			<text font="Cuprum" size="12" color="0xFFFFFF" alpha="100" align="right"/>
 			<filter size="5" angle="45" distance="0" color="0x000000" alpha="100" strength="350"/>
 						
@@ -169,7 +169,7 @@
 		</playerStyle>
 		
 		<!--Настройка названия танка-->
-		<vehicleStyle visible="true">
+		<vehicleStyle visible="false">
 			<text font="Cuprum" size="12" color="0xFFFFFF" alpha="100" align="left"/>
 			<filter size="5" angle="45" distance="0" color="0x000000" alpha="100" strength="350"/>
 			
@@ -181,7 +181,7 @@
 	
 	<!--Настройка панели-->
 	<panelStyle>
-		<size scale="1.0"/>																<!--Кратность панели относительно изначального размера. Диапазон 0.0-3.0, для больших мониторов будет достаточно задать в пределах 1.4-1.6-->
+		<size scale="1.06"/>															<!--Кратность панели относительно изначального размера. Диапазон 0.0-3.0, для больших мониторов будет достаточно задать в пределах 1.4-1.6-->
 	
 		<graphics>
 			<border color="0x000000" alpha="100"/>										<!--Настройка цвета рамки панели-->
@@ -192,14 +192,14 @@
 		<logStyle visible="true">
 			<!--Настройка общего стиля лога-->
 			<log>
-				<text font="Arial" size="15" color="0xA1A1A1" alpha="100" align="left"/> 
-				<filter size="2" angle="90" distance="0" color="0x000000" alpha="100" strength="150"/>
+				<text font="Arial" size="12" color="0xA1A1A1" alpha="100" align="left"/> 
+				<filter size="2" angle="45" distance="0" color="0x000000" alpha="100" strength="150"/>
 			</log>
 			
 			<advanced>
 				<unactive alpha="60"/>
 				<log way="up"/>														<!--Настройка направления записей в логе(up - добавлять запись сверху списка, down - добавлять запись вниз спика)-->
-				<format><![CDATA[<textformat tabstops='[26,70,100]'><font face='Arial' color='#FFFFFF' size='15'>{{count}}:<tab><font face='Arial' color='{{c:dmg-kind}}' size='15'>-{{dmg-one}}</font><tab>{{dmg-kind}}<tab> {{at-vehicle-type}} <font face='Arial' color='#FFFFFF' size='15'>{{at-vehicle-short}}</textformat>]]></format>
+				<format><![CDATA[<textformat tabstops='[16,40,100]'><b><font face='Arial' color='#FF0000' size='12'><font color='#CCCCCC'>{{count}}:</font><tab><font face='Arial' color='{{c:dmg-kind}}' size='12'>-{{dmg-one}}</font><tab><font color='{{c:at-shell}}'><font color='{{c:dmg-kind}}'>{{dmg-kind}}</font><tab> {{at-vehicle-type}}</font> <font face='Arial' color='{{c:at-vehicle-type}}' size='12'><font face='Arial' size='12' color='#F0E68C'>{{at-vehicle-short}}</font></font></font></text-{{dmg-one}}format></b>]]></format>
 			</advanced>
 		</logStyle>
 		
@@ -656,15 +656,19 @@
 	<macrosStyle>
 	<!-- Макрос для определения типа техники атаковавшего игрока - {{at-vehicle-type}} -->
 		<vehicleType>
-			<HT color="0xCC3333"><![CDATA[<font face='XVMSymbol' size='21' color='{{c:at-vehicle-type}}'>?</font>]]></HT> <!-- строка для отображения тяжелых танков -->
-			<MT color="0xFFF198"><![CDATA[<font face='XVMSymbol' size='21' color='{{c:at-vehicle-type}}'>;</font>]]></MT> <!-- строка для отображения средних танков -->
-			<LT color="0xA2FF9A"><![CDATA[<font face='XVMSymbol' size='21' color='{{c:at-vehicle-type}}'>:</font>]]></LT> <!-- строка для отображения легких танков -->
-			<TD color="0x3366CC"><![CDATA[<font face='XVMSymbol' size='21' color='{{c:at-vehicle-type}}'>.</font>]]></TD> <!-- строка для отображения противотанковой техники -->
-			<SPG color="0xCC6600"><![CDATA[<font face='XVMSymbol' size='21' color='{{c:at-vehicle-type}}'>-</font>]]></SPG> <!-- строка для отображения артиллерийских установок -->
+			<HT color="0xC60009"><![CDATA[<font face='XVMSymbol' size='20' color='{{c:at-vehicle-type}}'>?</font>]]></HT> <!-- строка для отображения тяжелых танков -->
+			<MT color="0xFBFB04"><![CDATA[<font face='XVMSymbol' size='20' color='{{c:at-vehicle-type}}'>;</font>]]></MT> <!-- строка для отображения средних танков -->
+			<LT color="0x02BB02"><![CDATA[<font face='XVMSymbol' size='20' color='{{c:at-vehicle-type}}'>:</font>]]></LT> <!-- строка для отображения легких танков -->
+			<TD color="0x04A6E7"><![CDATA[<font face='XVMSymbol' size='20' color='{{c:at-vehicle-type}}'>.</font>]]></TD> <!-- строка для отображения противотанковой техники -->
+			<SPG color="0xD96D02"><![CDATA[<font face='XVMSymbol' size='20' color='{{c:at-vehicle-type}}'>-</font>]]></SPG> <!-- строка для отображения артиллерийских установок -->
 	 	</vehicleType>
 		
 	<!-- Макрос для определения типа снаряда, нанесшего урон - {{at-shell}} -->
 		<shellType>
+
+
+
+
 			<AP><![CDATA[<img src='img://gui/maps/icons/shell/ARMOR_PIERCING.png' width='22' height='22' align='baseline' vspace='-17'> ББ</font>]]></AP> <!-- бронебойный снаряд -->
 			<CR><![CDATA[<img src='img://gui/maps/icons/shell/ARMOR_PIERCING_CR.png' width='22' height='22' align='baseline' vspace='-17'> БП</font>]]></CR> <!-- подкалиберный снаряд -->
 			<HC><![CDATA[<img src='img://gui/maps/icons/shell/ARMOR_PIERCING_CR.png' width='22' height='22' align='baseline' vspace='-17'> КС</font>]]></HC> <!-- кумулятивный снаряд -->
@@ -673,16 +677,18 @@
 		
 	<!-- Макрос для определения стоимости снаряда, нанесшего урон - {{at-shell-gold}} -->
 		<shellGold>
+
+
 			<credits><![CDATA[<img src='img://gui/maps/icons/library/CreditsIcon-1.png' width='14' height='14' align='baseline' vspace='-2'>]]></credits> <!-- снаряды, которые продаются за серебро -->
 			<gold><![CDATA[<img src='img://gui/maps/icons/library/GoldIcon-1.png' width='14' height='14' align='baseline' vspace='-2'>]]></gold> <!-- снаряды, которые продаются за серебро и золото -->
 		</shellGold>
 		
 	<!-- Макрос для определения типа полученного урона - {{dmg-kind}} -->
 		<damageType>
-			<attack color="0xFFFFFF"><![CDATA[<font size='14' color='{{c:at-shell-gold}}'> {{at-shell}} {{at-shell-gold}}</font>]]></attack> <!-- полученный урон при пробитии/разрыве снаряда -->
-			<fire color="0xFF0000"><![CDATA[ <img src='img://gui/maps/icons/shell/ARMOR_PIERCING.png' width='20' height='20' align='baseline' vspace='-17'> <font face='XVMSymbol' size='20' color='{{c:dmg-kind}}'>Q<font size='14' color='{{c:at-shell-gold}}'> {{at-shell}} {{at-shell-gold}}</font>]]></fire> <!-- полученный урон при пожаре -->
-			<collision color="0xff8d48"><![CDATA[<img src='img://gui/maps/icons/filters/empty.png' width='22' height='12' align='baseline' vspace='-2'><img src='img://gui/maps/icons/achievement/kamikaze.png' width='22' height='22' align='baseline' vspace='-30'>]]></collision> <!-- полученный урон при падении -->
-			<ramming color="0x00B511"><![CDATA[<img src='img://gui/maps/icons/filters/empty.png' width='22' height='12' align='baseline' vspace='-2'><img src='img://gui/maps/icons/achievement/kamikaze.png' width='22' height='22' align='baseline' vspace='-30'>]]></ramming> <!-- полученный урон при таране -->
+			<attack color="0xFFAE00"><![CDATA[<font size='12' color='{{c:at-shell-gold}}'> {{at-shell}} {{at-shell-gold}}</font>]]></attack> <!-- полученный урон при пробитии/разрыве снаряда -->
+			<fire color="0xFF0066"><![CDATA[ <img src='img://gui/maps/icons/artefact/handExtinguishers.png' width='20' height='20' align='baseline' vspace='-10'>]]>Пожар </fire> <!-- полученный урон при пожаре -->
+			<collision color="0x228855"><![CDATA[ <img src='img://gui/maps/icons/artefact/destroy.png' width='20' height='20' align='baseline' vspace='-10'>]]>Таран   </collision> <!-- полученный урон при падении таране -->
+			<ramming color="0xff8d48"><![CDATA[ <img src='img://gui/maps/icons/artefact/largeRepairkit.png' width='20' height='20' align='baseline' vspace='-10'>]]>Падение</ramming> <!-- полученный урон при падении -->
 		</damageType>
 	</macrosStyle>
 </damagePanel>
