@@ -21,6 +21,10 @@ call :_setup a
 echo.install text
 call :_setup t
 if exist "%_FolderPath%res_mods\%_mod_ver%\vehicles\" ( 
+echo.install xvm.DB
+md "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\"
+::move /Y "%_FolderPath%inst\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\"
+copy /V /Y "%_FolderPath%inst\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" >Nul
 echo.fix 0.9.x
 cd %_FolderPath%res_mods\%_mod_ver%\vehicles\
 NamesFix.cmd

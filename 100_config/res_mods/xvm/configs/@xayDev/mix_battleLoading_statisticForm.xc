@@ -26,6 +26,9 @@
     // Display options for Team/Clan logos.
     // Параметры отображения иконки игрока/клана.
     "clanIcon": { "alpha": 80, "h": 16, "show": false, "w": 16, "x": 60, "xr": 60, "y": 6, "yr": 6 },
+	// false - disable highlight of icons during battle start depends on ready state.
+    // false - отключить затемнение иконки не загрузившегося игрока.
+    "darkenNotReadyIcon": true,
 	// Display format for the left panel (macros allowed, see readme-en.txt).
     // Формат отображения для левой панели (допускаются макроподстановки, см. readme-ru.txt).
     "formatLeftNick": "{{name%.20s~..}}<font alpha='#A0'>{{clan}}</font>",

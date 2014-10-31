@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+	<Servers>
+		<Server address="login.p1.worldoftanks.net" name="RU 1"/>
+		<Server address="login.p2.worldoftanks.net" name="RU 2"/>
+		<Server address="login.p3.worldoftanks.net" name="RU 3"/>
+		<Server address="login.p4.worldoftanks.net" name="RU 4"/>
+		<Server address="login.p5.worldoftanks.net" name="RU 5"/>
+		<Server address="login.p6.worldoftanks.net" name="RU 6"/>
+		<Server address="login.p7.worldoftanks.net" name="RU 7"/>
+		<Server address="login.p8.worldoftanks.net" name="RU 8"/>
+		<Server address="login-ct-p1.worldoftanks.net" name="CT 1"/>
+		<Server address="login-ct-p2.worldoftanks.net" name="CT 2"/>
+	</Servers>
+	<GoodPing>100</GoodPing>
+	<BadPing>180</BadPing>
+	<Interval>1000</Interval>
+</Configuration>
