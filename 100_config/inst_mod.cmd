@@ -14,7 +14,7 @@ set _mod_ver=%_RESULT%
 echo.%_mod_ver%
 
 echo.Cleanup
-del /F /Q %_FolderPath%\*.log
+del /F /Q %_FolderPath%\*.log 2>Nul
 
 echo.install audio
 call :_setup a
@@ -22,8 +22,7 @@ echo.install text
 call :_setup t
 if exist "%_FolderPath%res_mods\%_mod_ver%\vehicles\" ( 
 echo.install xvm.DB
-md "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\"
-::move /Y "%_FolderPath%inst\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\"
+md "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" 2>Nul
 copy /V /Y "%_FolderPath%inst\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" >Nul
 echo.fix 0.9.x
 cd %_FolderPath%res_mods\%_mod_ver%\vehicles\
