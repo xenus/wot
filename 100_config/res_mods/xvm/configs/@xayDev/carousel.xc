@@ -69,7 +69,15 @@
     "extraFields": [
       // Sign of mastery.
       // Знак мастерства.
-      { "x": -1, "y": 10, "format": "<img src='img://gui/maps/icons/library/proficiency/class_icons_{{v.mastery}}.png' width='23' height='23'>" }
+      { "x": -1, "y": 10, "format": "<img src='img://gui/maps/icons/library/proficiency/class_icons_{{v.mastery}}.png' width='23' height='23'>" },
+      // Процент побед.
+      { "x": 2, "y": 30, "align": "left", "format": "<font color='{{v.c_winrate}}' size='10'><b>{{v.winrate%.02f}}%<b></font>", "alpha": "{{v.winrate?100|0}}" },
+      // Средний урон.
+      { "x": 94, "y": 34, "format": "<font face='$FieldFont' size='10' color='{{v.c_tdb}}'>{{v.tdb%4d}}</font>", "shadow": { "distance": 0, "angle": 90, "color": "0x000000", "alpha": 0.8, "blur": 2, "strength": 3 } },
+      // Показатель результативности (Отметки на орудии).
+      { "x": 116, "y": 46, "align": "right", "format": "<font color='{{v.c_damageRating}}' size='10'><b>{{v.damageRating}}%</b></font>", "alpha": "{{v.hitsRatio?100|0}}" },
+      // Количество боев.
+      { "x": 20, "y": 15, "format": "<b><font face='$FieldFont' size='10'><font color='{{v.c_battles}}'>{{v.battles|--}}</font></b>","shadow": {"blur":8, "strength": 3} }
     ]
   }
 }
