@@ -20,13 +20,16 @@ echo.install audio
 call :_setup a
 echo.install text
 call :_setup t
-if exist "%_FolderPath%res_mods\%_mod_ver%\vehicles\" ( 
 echo.install xvm.DB
 md "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" 2>Nul
 copy /V /Y "%_FolderPath%inst\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" >Nul
+if exist "%_FolderPath%res_mods\%_mod_ver%\vehicles\" ( 
 echo.fix 0.9.x
 cd %_FolderPath%res_mods\%_mod_ver%\vehicles\
 NamesFix.cmd
+cd %_FolderPath%
+xcopy /S /I /R /Y /Q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\*" "%_FolderPath%res_mods\%_mod_ver%\vehicles\" >Nul 2>Nul
+rmdir /s /q %_FolderPath%res_mods\%_mod_ver%\vehicles2\ 2>Nul
 )
 
 ENDLOCAL
