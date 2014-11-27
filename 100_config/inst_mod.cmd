@@ -15,6 +15,7 @@ echo.%_mod_ver%
 
 echo.Cleanup
 del /F /Q %_FolderPath%\*.log 2>Nul
+if exist "%APPDATA%\Wargaming.net\WorldOfTanks\custom_data\" ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\custom_data\ 2>Nul )
 
 echo.install audio
 call :_setup a
