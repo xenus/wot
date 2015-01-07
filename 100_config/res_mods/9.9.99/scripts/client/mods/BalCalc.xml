@@ -1,0 +1,9 @@
+<BalCalc.xml>
+  <correctAim>0</correctAim>
+  <BalCalcKey>16</BalCalcKey>
+  <xPos>0</xPos>
+  <yPos>-50</yPos>
+  <indicatorColor>0 200 0</indicatorColor>
+  <strategicFactorZ>0.0020833</strategicFactorZ>
+  <autoBCTimeout>0.0</autoBCTimeout>
+</BalCalc.xml>

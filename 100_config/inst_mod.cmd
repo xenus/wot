@@ -16,7 +16,10 @@ echo.%_mod_ver%
 echo.Cleanup
 del /F /Q %_FolderPath%\*.log 2>Nul
 if exist "%APPDATA%\Wargaming.net\WorldOfTanks\custom_data\" ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\custom_data\ 2>Nul )
-
+if exist "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\arenas_data\" ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\xvm\arenas_data\ 2>Nul )
+For /F "tokens=*" %%i in ('dir /AD /B /ON %APPDATA%\Wargaming.net\WorldOfTanks\*_cache 2^>Nul') do (
+  if /i tutorial_cache NEQ %%i%~3 ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\%%i%~3))
+  )
 echo.install audio
 call :_setup a
 echo.install text
@@ -24,6 +27,9 @@ call :_setup t
 echo.install xvm.DB
 md "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" 2>Nul
 copy /V /Y "%_FolderPath%inst\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" >Nul
+echo.install cache
+md "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" 2>Nul
+copy /V /Y "%_FolderPath%inst\tutorial_cache\*" "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" >Nul
 if exist "%_FolderPath%res_mods\%_mod_ver%\vehicles\" ( 
 echo.fix 0.9.x
 cd %_FolderPath%res_mods\%_mod_ver%\vehicles\
