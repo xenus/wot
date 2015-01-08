@@ -7,6 +7,7 @@ set a_fExt2=fev
 set t_wDir=text\LC_MESSAGES
 set t_fExt1=mo
 cd /d "%_FolderPath%"
+if NOT exist "%_FolderPath%\WorldOfTanks.exe" (echo.[!]ERROR: It's not a game dir&ENDLOCAL&GOTO :EOF)
 
 set "_RESULT="
   For /F "tokens=*" %%i in ('dir /AD /B /ON .\res_mods\0.* 2^>Nul') do (call :_getMaxInt %%i%~3)
