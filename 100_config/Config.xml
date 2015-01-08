@@ -9,6 +9,7 @@
 		<Server address="login.p6.worldoftanks.net" name="RU 6"/>
 		<Server address="login.p7.worldoftanks.net" name="RU 7"/>
 		<Server address="login.p8.worldoftanks.net" name="RU 8"/>
+		<Server address="login.p9.worldoftanks.net" name="RU 9"/>
 		<Server address="login-ct-p1.worldoftanks.net" name="CT 1"/>
 		<Server address="login-ct-p2.worldoftanks.net" name="CT 2"/>
 	</Servers>
