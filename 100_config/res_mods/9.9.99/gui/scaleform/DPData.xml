@@ -658,17 +658,17 @@
 		<vehicleType>
 			<HT color="0x7c7c7c"><![CDATA[<img src='img://gui/log/HT.png' width='16' height='16' align='baseline' vspace='-9'>]]></HT> <!-- строка для отображения тяжелых танков -->
 			<MT color="0xf3e22e"><![CDATA[<img src='img://gui/log/MT.png' width='16' height='16' align='baseline' vspace='-9'>]]></MT> <!-- строка для отображения средних танков -->
-			<LT color="0x80f718"><![CDATA[<img src='img://gui/log/LT.png' width='16' height='16' align='baseline' vspace='-9'>]]></LT> <!-- строка для отображения легких танков -->
+			<LT color="0x80f718"><![CDATA[<img src='img://gui/log/LT.png' width='12' height='12' align='baseline' vspace='-9'>]]></LT> <!-- строка для отображения легких танков -->
 			<TD color="0x2389f4"><![CDATA[<img src='img://gui/log/TD.png' width='16' height='16' align='baseline' vspace='-9'>]]></TD> <!-- строка для отображения противотанковой техники -->
-			<SPG color="0xf42915"><![CDATA[<img src='img://gui/log/SPG.png' width='16' height='16' align='baseline' vspace='-9'>]]></SPG> <!-- строка для отображения артиллерийских установок -->
+			<SPG color="0xf42915"><![CDATA[<img src='img://gui/log/SPG.png' width='12' height='12' align='baseline' vspace='-9'>]]></SPG> <!-- строка для отображения артиллерийских установок -->
 	 	</vehicleType>
 		
 	<!-- Макрос для определения типа снаряда, нанесшего урон - {{at-shell}} -->
 		<shellType>
-			<AP color="0xFFAE00"><![CDATA[<img src='img://gui/maps/icons/shell/ARMOR_PIERCING.png' width='22' height='22' align='baseline' vspace='-17'> <font face='Arial' size='10'> ББ</font>]]></AP> <!-- бронебойный снаряд -->
-			<CR color="0xFFAE01"><![CDATA[<img src='img://gui/maps/icons/shell/ARMOR_PIERCING_CR.png' width='22' height='22' align='baseline' vspace='-17'> <font face='Arial' size='10'> БП</font>]]></CR> <!-- подкалиберный снаряд -->
-			<HC color="0xFFAE02"><![CDATA[<img src='img://gui/maps/icons/shell/ARMOR_PIERCING_HE.png' width='22' height='22' align='baseline' vspace='-17'> <font face='Arial' size='10'> КС</font>]]></HC> <!-- кумулятивный снаряд -->
-			<HE color="0xFFAE03"><![CDATA[<img src='img://gui/maps/icons/shell/HIGH_EXPLOSIVE.png' width='22' height='22' align='baseline' vspace='-17'> <font face='Arial' size='10'> ОФ</font>]]></HE> <!-- осколочно-фугасный снаряд -->
+			<AP color="0xFFAE00"><![CDATA[<img src='img://gui/maps/icons/shell/ARMOR_PIERCING.png' width='18' height='18' align='baseline' vspace='-17'> <font face='Arial' size='9'>ББ</font>]]></AP> <!-- бронебойный снаряд -->
+			<CR color="0xFFAE01"><![CDATA[<img src='img://gui/maps/icons/shell/ARMOR_PIERCING_CR.png' width='18' height='18' align='baseline' vspace='-17'> <font face='Arial' size='9'>БП</font>]]></CR> <!-- подкалиберный снаряд -->
+			<HC color="0xFFAE02"><![CDATA[<img src='img://gui/maps/icons/shell/ARMOR_PIERCING_HE.png' width='18' height='18' align='baseline' vspace='-17'> <font face='Arial' size='9'>КС</font>]]></HC> <!-- кумулятивный снаряд -->
+			<HE color="0xFFAE03"><![CDATA[<img src='img://gui/maps/icons/shell/HIGH_EXPLOSIVE.png' width='18' height='18' align='baseline' vspace='-17'> <font face='Arial' size='9'>ОФ</font>]]></HE> <!-- осколочно-фугасный снаряд -->
 		</shellType>
 		
 	<!-- Макрос для определения стоимости снаряда, нанесшего урон - {{at-shell-gold}} -->
@@ -679,10 +679,10 @@
 		
 	<!-- Макрос для определения типа полученного урона - {{dmg-kind}} -->
 		<damageType>
-			<attack color="{{c:at-shell}}"><![CDATA[<font size='10' color='{{c:at-shell-gold}}'> {{at-shell}} {{at-shell-gold}} </font>]]></attack> <!-- полученный урон при пробитии/разрыве снаряда -->
-			<fire color="0xFF0000"><![CDATA[ <img src='img://gui/log/fire.png' width='22' height='22' align='baseline' vspace='-16'> <font face='Arial' size='13' color='{{c:dmg-kind}}'>Пожар</font>]]></fire> <!-- полученный урон при пожаре -->
-			<collision color="0xff8d48"><![CDATA[ <img src='img://gui/log/collision.png' width='22' height='22' align='baseline' vspace='-16'> <font face='Arial' size='13' color='{{c:dmg-kind}}'> Таран</font>]]></collision> <!-- полученный урон при таране -->
-			<ramming color="0xCC66CC"><![CDATA[ <img src='img://gui/log/ramming.png' width='22' height='22' align='baseline' vspace='-16'> <font face='Arial' size='13' color='{{c:dmg-kind}}'>Падение</font>]]></ramming> <!-- полученный урон при падении -->
+			<attack color="{{c:at-shell}}"><![CDATA[<font size='14' color='{{c:at-shell-gold}}'> {{at-shell}} {{at-shell-gold}} </font>]]></attack> <!-- полученный урон при пробитии/разрыве снаряда -->
+			<fire color="0xFF0000"><![CDATA[ <img src='img://gui/log/fire.png' width='18' height='18' align='baseline' vspace='-16'> <font face='Arial' size='9' color='{{c:dmg-kind}}'>Пожар</font>]]></fire> <!-- полученный урон при пожаре -->
+			<collision color="0xff8d48"><![CDATA[ <img src='img://gui/log/collision.png' width='18' height='18' align='baseline' vspace='-16'> <font face='Arial' size='9' color='{{c:dmg-kind}}'>Таран</font>]]></collision> <!-- полученный урон при таране -->
+			<ramming color="0xCC66CC"><![CDATA[ <img src='img://gui/log/ramming.png' width='18' height='18' align='baseline' vspace='-16'> <font face='Arial' size='9' color='{{c:dmg-kind}}'>Падение</font>]]></ramming> <!-- полученный урон при падении -->
 		</damageType>
 	</macrosStyle>
 </damagePanel>

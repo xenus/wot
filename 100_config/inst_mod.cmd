@@ -7,7 +7,7 @@ set a_fExt2=fev
 set t_wDir=text\LC_MESSAGES
 set t_fExt1=mo
 cd /d "%_FolderPath%"
-if NOT exist "%_FolderPath%\WorldOfTanks.exe" (echo.[!]ERROR: It's not a game dir&ENDLOCAL&GOTO :EOF)
+if NOT exist "%_FolderPath%\WorldOfTanks.exe" (echo.[!]ERROR: It's not a game dir&ENDLOCAL&GOTO :ENDProc)
 
 set "_RESULT="
   For /F "tokens=*" %%i in ('dir /AD /B /ON .\res_mods\0.* 2^>Nul') do (call :_getMaxInt %%i%~3)
@@ -16,22 +16,24 @@ echo.%_mod_ver%
 
 echo.Cleanup
 del /F /Q %_FolderPath%\*.log 2>Nul
+del /F /Q %_FolderPath%\*.bak 2>Nul
 if exist "%APPDATA%\Wargaming.net\WorldOfTanks\custom_data\" ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\custom_data\ 2>Nul )
 if exist "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\arenas_data\" ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\xvm\arenas_data\ 2>Nul )
 For /F "tokens=*" %%i in ('dir /AD /B /ON %APPDATA%\Wargaming.net\WorldOfTanks\*_cache 2^>Nul') do (
   if /i tutorial_cache NEQ %%i%~3 ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\%%i%~3))
   )
+if NOT exist "%_FolderPath%install\xDistr\doinst" (ENDLOCAL&GOTO :ENDProc)
 echo.install audio
 call :_setup a
 echo.install text
 call :_setup t
 echo.install xvm.DB
 md "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" 2>Nul
-copy /V /Y "%_FolderPath%inst\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" >Nul
+copy /V /Y "%_FolderPath%install\xDistr\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" >Nul
 echo.install cache
 md "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" 2>Nul
-copy /V /Y "%_FolderPath%inst\tutorial_cache\*" "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" >Nul
-if exist "%_FolderPath%res_mods\%_mod_ver%\vehicles\" ( 
+copy /V /Y "%_FolderPath%install\xDistr\tutorial_cache\*" "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" >Nul
+if exist "%_FolderPath%res_mods\%_mod_ver%\vehicles\NamesFix.cmd" ( 
 echo.fix 0.9.x
 cd %_FolderPath%res_mods\%_mod_ver%\vehicles\
 NamesFix.cmd
@@ -39,7 +41,9 @@ cd %_FolderPath%
 xcopy /S /I /R /Y /Q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\*" "%_FolderPath%res_mods\%_mod_ver%\vehicles\" >Nul 2>Nul
 rmdir /s /q %_FolderPath%res_mods\%_mod_ver%\vehicles2\ 2>Nul
 )
-
+del /F /Q "%_FolderPath%install\xDistr\doinst" 2>Nul
+:ENDProc
+pause
 ENDLOCAL
   exit /b /0
 

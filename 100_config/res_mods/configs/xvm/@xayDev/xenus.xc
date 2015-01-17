@@ -172,7 +172,10 @@
   "iconset": ${"iconset.xc":"iconset"},
   // Minimap.
   // Миникарта.
-  "minimap": ${ "minimap.xc":"minimap" },
+  "minimap": ${"minimap.xc":"minimap"},
+  // Minimap.
+  // Миникарта.
+  "minimapAlt": ${"minimapAlt.xc":"minimap"},
   "markers": {
     "ally": {
       "alive": {

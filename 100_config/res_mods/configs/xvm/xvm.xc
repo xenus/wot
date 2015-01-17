@@ -8,7 +8,7 @@
  * Fichier de lancement de la configuration XVM.
  * Pour l'utiliser, renommer ce fichier en 'xvm.xc'.
  *
- * Format à utiliser : ${"path to config file":"."}
+ * Format à utiliser : ${"chemin vers fichier de config":"."}
  * // - commente la ligne (elle ne sera pas utilisée)
  *
  * --------------------------------------------------------------- 
@@ -18,5 +18,5 @@
  * // - закомментировать строку (использоваться не будет)
  */                
             
-//${"configs/xvm.xc":"."}
-${"configs/@xayDev/xenus.xc":"."}
+//${"default/@xvm.xc":"."}
+${"@xayDev/xenus.xc":"."}

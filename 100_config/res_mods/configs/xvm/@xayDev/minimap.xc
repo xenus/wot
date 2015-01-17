@@ -13,6 +13,9 @@
     // Self icon transparency. White pointing arrow.
     // Прозрачность своей иконки. Белая стрелка.
     "selfIconAlpha": 100,
+    // Hide camera direction green triangle (also hides WG camera direction line).
+    // Спрятать зеленый треугольник направления камеры (также скрывает луч направления камеры WG).
+    "hideCameraTriangle": false,
     // Camera transparency and its attached geometry (green triangle).
     // Прозрачность камеры и прикрепленной геометрии (зеленый треугольник).
     "cameraAlpha": 100,
@@ -29,6 +32,15 @@
       // false - не устанавливать увеличенную миникарту по центру экрана.
       "centered": false
     },
+    // Minimap labels.
+    // Надписи на миникарте.
+    "labels": ${"minimapLabels.xc":"labels"},
+    // Minimap circles.
+    // Круги на миникарте.
+    "circles": ${"minimapCircles.xc":"circles"},
+    // Minimap lines.
+    // Линии на миникарте.
+    "lines": ${"minimapLines.xc":"lines"},
     // Square of the maximum units appearance (1000 m).
     // Квадрат границы максимальной отрисовки юнитов (1000 м).
     "square" : {
@@ -42,15 +54,6 @@
       "alpha": 35,
       // Цвет.
       "color": "0xFFCC66"
-    },
-    // Minimap labels.
-    // Надписи на миникарте.
-    "labels": ${"minimapLabels.xc":"labels"},
-    // Minimap circles.
-    // Круги на миникарте.
-    "circles": ${"minimapCircles.xc":"circles"},
-    // Minimap lines.
-    // Линии на миникарте.
-    "lines": ${"minimapLines.xc":"lines"}
+    }
   }
 }

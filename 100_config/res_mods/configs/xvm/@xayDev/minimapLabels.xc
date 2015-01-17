@@ -7,21 +7,24 @@
       // {{vehicle-class}} macro substitutions.
       // Подстановки макроса {{vehicle-class}}.
       "vehicleclassmacro": {
-        // ЛT.
+        // LT / ЛT ♦.
         "light": "&#x3A;",
-        // СТ.
+        // MT / СТ.
         "medium": "&#x3B;",
-        // ТТ.
+        // HT / ТТ.
         "heavy": "&#x3F;",
-        // ПТ.
+        // TD / ПТ ▼.
         "td": "&#x2E;",
-        // Artillery / Арта.
+        // Artillery / Арта. ■
         "spg": "&#x2D;",
         // HeavyTank10 by gui_settings.xml.
         // ТТ10 посредством gui_settings.xml. Кто пользуется- вставить в кавычки значение &#x4A;
-        "superh": ""
+        "superh": "&#x4A"
         // Special symbols website / Сайт со спец символами:
         // http://www.fileformat.info/info/unicode/char/25a0/index.htm
+        // Great symbolic font by Andrey_Hard for {{vehicle-class}}:
+        // Отличный символьный шрифт от Andrey_Hard для замены букв от {{vehicle-class}} макроса:
+        // http://goo.gl/d2KIj
       },
       // Textfields for tanks on minimap.
       // Текстовые поля для танков на миникарте.
@@ -114,7 +117,7 @@
           "deadsquad": 
            { "enabled": true, "color": "0x000000", "distance": 0, "angle": 45, "alpha": 80, "blur": 2, "strength": 3 }
         },
-        // Field offset ralative to current icon (except lost - relative to enemy last seen position).
+        // Field offset relative to current icon (except lost - relative to enemy last seen position).
         // Смещение полей относительно текущей иконки (кроме lost и dead- относительно последних координат видимой позиции).
         "offset": {
           "ally":			{"x": -4, "y": -5.5},
@@ -170,7 +173,7 @@
         // Increase sizes in case of field being partially cut off.
         // -------------------------------------------------------------------------------------
         // Уменьшайте размеры, если при изменении размера миникарты изображение карты сжимается.
-        // Увеличивайте размеры, если содержмиое поля обрезается.
+        // Увеличивайте размеры, если содержимое поля обрезается.
         "width": 100,
         "height": 30
       }
