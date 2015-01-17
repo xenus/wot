@@ -22,7 +22,7 @@ if exist "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\arenas_data\" ( rmdir /s /q %
 For /F "tokens=*" %%i in ('dir /AD /B /ON %APPDATA%\Wargaming.net\WorldOfTanks\*_cache 2^>Nul') do (
   if /i tutorial_cache NEQ %%i%~3 ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\%%i%~3))
   )
-if NOT exist "%_FolderPath%install\xDistr\doinst" (ENDLOCAL&GOTO :ENDProc)
+if NOT exist "%_FolderPath%install\xDistr\do.install" (ENDLOCAL&GOTO :ENDProc)
 echo.install audio
 call :_setup a
 echo.install text
@@ -41,7 +41,7 @@ cd %_FolderPath%
 xcopy /S /I /R /Y /Q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\*" "%_FolderPath%res_mods\%_mod_ver%\vehicles\" >Nul 2>Nul
 rmdir /s /q %_FolderPath%res_mods\%_mod_ver%\vehicles2\ 2>Nul
 )
-del /F /Q "%_FolderPath%install\xDistr\doinst" 2>Nul
+del /F /Q "%_FolderPath%install\xDistr\do.install" 2>Nul
 :ENDProc
 pause
 ENDLOCAL
