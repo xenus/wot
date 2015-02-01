@@ -35,11 +35,11 @@ md "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" 2>Nul
 copy /V /Y "%_FolderPath%install\xDistr\tutorial_cache\*" "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" >Nul
 if exist "%_FolderPath%res_mods\%_mod_ver%\vehicles\NamesFix.cmd" ( 
 echo.fix 0.9.x
-cd %_FolderPath%res_mods\%_mod_ver%\vehicles\
+cd "%_FolderPath%res_mods\%_mod_ver%\vehicles\"
 NamesFix.cmd
-cd %_FolderPath%
+cd "%_FolderPath%"
 xcopy /S /I /R /Y /Q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\*" "%_FolderPath%res_mods\%_mod_ver%\vehicles\" >Nul 2>Nul
-rmdir /s /q %_FolderPath%res_mods\%_mod_ver%\vehicles2\ 2>Nul
+rmdir /s /q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\" 2>Nul
 )
 del /F /Q "%_FolderPath%install\xDistr\do.install" 2>Nul
 :ENDProc
@@ -51,17 +51,17 @@ ENDLOCAL
   del /F /Q %temp%\xtmp.txt 2>Nul
   call :_initVar %1
 if exist "%_wDir%" ( 
-  if /i 99%_fExt1% NEQ 99 ( dir /b %_wDir%\*.%_fExt1% >> %temp%\xtmp.txt )
-  if /i 99%_fExt2% NEQ 99 ( dir /b %_wDir%\*.%_fExt2% >> %temp%\xtmp.txt )
-  if /i 99%_fExt3% NEQ 99 ( dir /b %_wDir%\*.%_fExt3% >> %temp%\xtmp.txt )
-  For /F "tokens=*" %%i in (%temp%\xtmp.txt) do ren %_wDir%\%%i %%ix
-  if /i 99%_fExt1% NEQ 99 ( copy /V /Y %_sDir%\*.%_fExt1% %_wDir% >Nul )
-  if /i 99%_fExt2% NEQ 99 ( copy /V /Y %_sDir%\*.%_fExt2% %_wDir% >Nul )
-  if /i 99%_fExt3% NEQ 99 ( copy /V /Y %_sDir%\*.%_fExt3% %_wDir% >Nul )
+  if /i 99%_fExt1% NEQ 99 ( dir /b "%_wDir%\*.%_fExt1%" >> %temp%\xtmp.txt )
+  if /i 99%_fExt2% NEQ 99 ( dir /b "%_wDir%\*.%_fExt2%" >> %temp%\xtmp.txt )
+  if /i 99%_fExt3% NEQ 99 ( dir /b "%_wDir%\*.%_fExt3%" >> %temp%\xtmp.txt )
+  For /F "tokens=*" %%i in (%temp%\xtmp.txt) do ren "%_wDir%\%%i" %%ix
+  if /i 99%_fExt1% NEQ 99 ( echo.copy /V /Y "%_sDir%\*.%_fExt1%" "%_wDir%" >Nul )
+  if /i 99%_fExt2% NEQ 99 ( echo.copy /V /Y "%_sDir%\*.%_fExt2%" "%_wDir%" >Nul )
+  if /i 99%_fExt3% NEQ 99 ( echo.copy /V /Y "%_sDir%\*.%_fExt3%" "%_wDir%" >Nul )
   For /F "tokens=*" %%i in (%temp%\xtmp.txt) do del %_wDir%\%%i 2>Nul
-  if /i 99%_fExt1% NEQ 99 ( ren %_wDir%\*.%_fExt1%x *.%_fExt1% )
-  if /i 99%_fExt2% NEQ 99 ( ren %_wDir%\*.%_fExt2%x *.%_fExt2% )
-  if /i 99%_fExt3% NEQ 99 ( ren %_wDir%\*.%_fExt3%x *.%_fExt3% )
+  if /i 99%_fExt1% NEQ 99 ( ren "%_wDir%\*.%_fExt1%x" *.%_fExt1% )
+  if /i 99%_fExt2% NEQ 99 ( ren "%_wDir%\*.%_fExt2%x" *.%_fExt2% )
+  if /i 99%_fExt3% NEQ 99 ( ren "%_wDir%\*.%_fExt3%x" *.%_fExt3% )
 )
   exit /b /0
 
@@ -74,7 +74,7 @@ if %1==a (
   set _fExt3=%a_fExt3%
 )
 if %1==t (
-  set _wDir=%_FolderPath%res_mods\%_mod_ver%\%t_wDir%\
+  set _wDir=%_FolderPath%res_mods\%_mod_ver%\%t_wDir%
   set _sDir=%_FolderPath%res\%t_wDir%
   set _fExt1=%t_fExt1%
   set _fExt2=%t_fExt2%
