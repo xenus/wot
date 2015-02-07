@@ -55,10 +55,10 @@ if exist "%_wDir%" (
   if /i 99%_fExt2% NEQ 99 ( dir /b "%_wDir%\*.%_fExt2%" >> %temp%\xtmp.txt )
   if /i 99%_fExt3% NEQ 99 ( dir /b "%_wDir%\*.%_fExt3%" >> %temp%\xtmp.txt )
   For /F "tokens=*" %%i in (%temp%\xtmp.txt) do ren "%_wDir%\%%i" %%ix
-  if /i 99%_fExt1% NEQ 99 ( echo.copy /V /Y "%_sDir%\*.%_fExt1%" "%_wDir%" >Nul )
-  if /i 99%_fExt2% NEQ 99 ( echo.copy /V /Y "%_sDir%\*.%_fExt2%" "%_wDir%" >Nul )
-  if /i 99%_fExt3% NEQ 99 ( echo.copy /V /Y "%_sDir%\*.%_fExt3%" "%_wDir%" >Nul )
-  For /F "tokens=*" %%i in (%temp%\xtmp.txt) do del %_wDir%\%%i 2>Nul
+  if /i 99%_fExt1% NEQ 99 ( copy /V /Y "%_sDir%\*.%_fExt1%" "%_wDir%" >Nul )
+  if /i 99%_fExt2% NEQ 99 ( copy /V /Y "%_sDir%\*.%_fExt2%" "%_wDir%" >Nul )
+  if /i 99%_fExt3% NEQ 99 ( copy /V /Y "%_sDir%\*.%_fExt3%" "%_wDir%" >Nul )
+  For /F "tokens=*" %%i in (%temp%\xtmp.txt) do del "%_wDir%\%%i" 2>Nul
   if /i 99%_fExt1% NEQ 99 ( ren "%_wDir%\*.%_fExt1%x" *.%_fExt1% )
   if /i 99%_fExt2% NEQ 99 ( ren "%_wDir%\*.%_fExt2%x" *.%_fExt2% )
   if /i 99%_fExt3% NEQ 99 ( ren "%_wDir%\*.%_fExt3%x" *.%_fExt3% )
