@@ -1,10 +1,10 @@
 <AutoTelescope.xml>
 	<instList>1785 0 249</instList>
 <!-- 1273 - bino | 1785 - camo | 249 - repair -->
-	<LightTank>1785 0 249</LightTank>
+	<LightTank>1785 1273 249</LightTank>
 	<MediumTank>1785 0 249</MediumTank>
 	<HeavyTank>1785 0 249</HeavyTank>
 	<spg>1785 0 0</spg>
-	<AT-spg>1785 0 0</AT-spg>
+	<AT-spg>1785 1273 0</AT-spg>
 	<lockKey>42</lockKey>
 </AutoTelescope.xml>

@@ -3,14 +3,14 @@
  * at Sun Apr 27 23:20:50 GMT+0400 2014
  */
 {
-  "configVersion": "5.1.1",
+  "configVersion": "5.6.1",
   "editorVersion": "0.76",
   "definition": {
     "author": "xenus",
-    "date": "28.06.2014",
+    "date": "24.02.2015",
     "description": "ver. 1.5.4",
-    "gameVersion": "0.9.1",
-    "modMinVersion": "5.3.1",
+    "gameVersion": "0.9.6",
+    "modMinVersion": "6.0.1",
     "url": ""
   },
   "rating": {
@@ -58,25 +58,21 @@
     "sortColumn": 5,
     "startPage": 1
   },
-  "battle": {
-    "clanIconsFolder": "../../../clanicons/",
-    "clockFormat": "H:N",
-    "elements": [
 
-    ],
-    "highlightVehicleIcon": true,
-    "mirroredVehicleIcons": false,
-    "showPostmortemTips": false,
-	"allowHpInPanelsAndMinimap": true
-  },
+  // General parameters for the battle interface.
+  // Общие параметры боевого интерфейса.
+  "battle": ${"battle.xc":"battle"},
+
   // Parameters of the Battle Loading screen.
   // Параметры экрана загрузки боя.
 //"battleLoading": ${"battleLoading.xc":"battleLoading"},
   "battleLoading": ${"mix_battleLoading_statisticForm.xc":"battleLoading_statisticForm"},
+
   // Parameters of the Battle Statistics form.
   // Параметры окна статистики по клавише Tab.
 //  "statisticForm": ${"statisticForm.xc":"statisticForm"},
   "statisticForm": ${"mix_battleLoading_statisticForm.xc":"battleLoading_statisticForm"},
+
   "playersPanel": {
     "alpha": 80,
     "clanIcon": { "alpha": 50, "h": 16, "show": false, "w": 16, "x": 60, "xr": 60, "y": 4, "yr": 4 },
