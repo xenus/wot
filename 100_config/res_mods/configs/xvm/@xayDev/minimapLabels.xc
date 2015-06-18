@@ -40,13 +40,13 @@
         // Формат поля.
         "format": {
           // Союзник.
-          "ally":  "<textformat leading='-2'><font face='dynamic' size='18' color='{{c:system}}'>{{hp-ratio%.436a|&#xE6;}}</font><span class='mm_a'><font face='XVMSymbol' size='5' color='{{c:xwn8}}'>&#x21;</font>\n{{vehicle}}</span><textformat>",
+          "ally":  "<textformat leading='-2'><font face='dynamic' size='18' color='{{c:system}}'>{{hp-ratio%.335a|&#x1B3;}}</font><span class='mm_a'><font face='XVMSymbol' size='5' color='{{c:xwn8}}'>&#x21;</font>\n{{vehicle}}</span><textformat>",
           // Тимкиллер.
           "teamkiller":  "<textformat leading='-2'><span class='mm_t'>    <font face='XVMSymbol' size='5' color='{{c:xwn8}}'>&#x21;</font>\n{{vehicle}}</span><textformat>",
           // Враг.
-          "enemy": "<textformat leading='-2'><font face='dynamic' size='18' color='{{c:system}}'>{{hp-ratio%.436a|&#xE6;}}</font><span class='mm_e'><font face='XVMSymbol' size='5' color='{{c:xwn8}}'>&#x22;</font>\n{{vehicle}}</span><textformat>",
+          "enemy": "<textformat leading='-2'><font face='dynamic' size='18' color='{{c:system}}'>{{hp-ratio%.335a|&#x1B3;}}</font><span class='mm_e'><font face='XVMSymbol' size='5' color='{{c:xwn8}}'>&#x22;</font>\n{{vehicle}}</span><textformat>",
           // Взводный.
-          "squad": "<textformat leading='-2'><font face='dynamic' size='18' color='{{c:system}}'>{{hp-ratio%.436a|&#xE6;}}</font><span class='mm_s'><font face='XVMSymbol' size='5' color='{{c:xwn8}}'>&#x21;</font> <i>{{nick%.5s}}</i>\n{{vehicle}}</span><textformat>",
+          "squad": "<textformat leading='-2'><font face='dynamic' size='18' color='{{c:system}}'>{{hp-ratio%.335a|&#x1B3;}}</font><span class='mm_s'><font face='XVMSymbol' size='5' color='{{c:xwn8}}'>&#x21;</font> <i>{{nick%.5s}}</i>\n{{vehicle}}</span><textformat>",
           // Own marker or spectated subject.
           // Свой маркер и маркер приёмника камеры наблюдения в случае смерти.
           "oneself": "",
