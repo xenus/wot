@@ -109,7 +109,11 @@
     "removePanelsModeSwitcher": true,
     "removeSquadIcon": true
   },
-  "fragCorrelation": { "hideTeamTextFields": true },
+  // Frag counter panel.
+  // Панель счёта в бою.
+//  "fragCorrelation": { "hideTeamTextFields": true },
+  "fragCorrelation": ${"battle.xc":"fragCorrelation"},
+
   "hotkeys": { "minimapZoom": { "enabled": true, "keyCode": 163, "onHold": true } },
   "hitLog": {
     "visible": true,
@@ -133,7 +137,12 @@
     "w": 500,
     "y": 36
   },
-  "expertPanel": { "delay": 15, "scale": 150 },
+  // Ingame crits panel by "expert" skill.
+  // Внутриигровая панель критов от навыка "эксперт".
+//  "expertPanel": { "delay": 15, "scale": 150 },
+  "expertPanel": ${"battle.xc":"expertPanel"},
+
+
   "captureBar": {
     "enabled": true,
     "ally": {

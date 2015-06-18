@@ -1,0 +1,71 @@
+--- ServerCross2.xml
++++ ServerCross2.xml
+@@ -16,2 +16,2 @@
+-          <mapping>22 0 35 21</mapping>
+-          <size>13 21</size>
++          <mapping>13 0 26 13</mapping>
++          <size>13 13</size>
+@@ -20,2 +20,2 @@
+-          <mapping>22 22 43 35</mapping>
+-          <size>21 13</size>
++          <mapping>26 0 39 13</mapping>
++          <size>13 13</size>
+@@ -24,2 +24,2 @@
+-          <mapping>36 0 49 21</mapping>
+-          <size>13 21</size>
++          <mapping>39 0 52 13</mapping>
++          <size>13 13</size>
+@@ -28,2 +28,2 @@
+-          <mapping>0 0 21 13</mapping>
+-          <size>21 13</size>
++          <mapping>0 0 13 13</mapping>
++          <size>13 13</size>
+@@ -32 +32 @@
+-          <mapping>0 14 21 35</mapping>
++          <mapping>0 13 21 34</mapping>
+@@ -53,2 +53,2 @@
+-          <mapping>22 0 35 21</mapping>
+-          <size>13 21</size>
++          <mapping>13 0 26 13</mapping>
++          <size>13 13</size>
+@@ -57,2 +57,2 @@
+-          <mapping>22 22 43 35</mapping>
+-          <size>21 13</size>
++          <mapping>26 0 39 13</mapping>
++          <size>13 13</size>
+@@ -61,2 +61,2 @@
+-          <mapping>36 0 49 21</mapping>
+-          <size>13 21</size>
++          <mapping>39 0 52 13</mapping>
++          <size>13 13</size>
+@@ -65,2 +65,2 @@
+-          <mapping>0 0 21 13</mapping>
+-          <size>21 13</size>
++          <mapping>0 0 13 13</mapping>
++          <size>13 13</size>
+@@ -69 +69 @@
+-          <mapping>0 14 21 35</mapping>
++          <mapping>0 13 21 34</mapping>
+@@ -89,2 +89,2 @@
+-          <mapping>22 0 35 21</mapping>
+-          <size>13 21</size>
++          <mapping>13 0 26 13</mapping>
++          <size>13 13</size>
+@@ -93,2 +93,2 @@
+-          <mapping>22 22 43 35</mapping>
+-          <size>21 13</size>
++          <mapping>26 0 39 13</mapping>
++          <size>13 13</size>
+@@ -97,2 +97,2 @@
+-          <mapping>36 0 49 21</mapping>
+-          <size>13 21</size>
++          <mapping>39 0 52 13</mapping>
++          <size>13 13</size>
+@@ -101,2 +101,2 @@
+-          <mapping>0 0 21 13</mapping>
+-          <size>21 13</size>
++          <mapping>0 0 13 13</mapping>
++          <size>13 13</size>
+@@ -105 +105 @@
+-          <mapping>0 14 21 35</mapping>
++          <mapping>0 13 21 34</mapping>

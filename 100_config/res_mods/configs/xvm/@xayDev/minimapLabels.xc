@@ -35,6 +35,8 @@
         // Textfields switch for lost enemy units. Show last seen position.
         // Выключатель текстовых полей для пропавших врагов.
         "lostEnemyEnabled": true,
+        // Тип сглаживания текстовых полей.
+        "antiAliasType": "normal", // normal/advanced
         // Формат поля.
         "format": {
           // Союзник.

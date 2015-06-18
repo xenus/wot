@@ -1,5 +1,0 @@
---- autoaim_extended.xml
-+++ autoaim_extended.xml
-@@ -8 +8 @@
--		<IndicatorColor>	wg_enemy	</IndicatorColor>
-+		<IndicatorColor>	cyan	</IndicatorColor>
