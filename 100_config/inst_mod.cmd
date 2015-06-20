@@ -18,6 +18,7 @@ echo.Cleanup
 del /F /Q %_FolderPath%\*.log 2>Nul
 del /F /Q %_FolderPath%\*.bak 2>Nul
 del /F /Q %_FolderPath%\*.killme 2>Nul
+del /F /Q %_FolderPath%\logs 2>Nul
 if exist "%APPDATA%\Wargaming.net\WorldOfTanks\custom_data\" ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\custom_data\ 2>Nul )
 if exist "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\arenas_data\" ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\xvm\arenas_data\ 2>Nul )
 For /F "tokens=*" %%i in ('dir /AD /B /ON %APPDATA%\Wargaming.net\WorldOfTanks\*_cache 2^>Nul') do (

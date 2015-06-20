@@ -139,7 +139,6 @@
   },
   // Ingame crits panel by "expert" skill.
   // Внутриигровая панель критов от навыка "эксперт".
-//  "expertPanel": { "delay": 15, "scale": 150 },
   "expertPanel": ${"battle.xc":"expertPanel"},
 
 
@@ -162,14 +161,10 @@
     },
     "primaryTitleOffset": 7
   },
-  "battleResults": {
-    "showBattleTier": true,
-    "showChances": true,
-    "showExtendedInfo": true,
-    "showNetIncome": true,
-    "showTotals": true,
-    "startPage": 2
-  },
+  // Parameters of the After Battle Screen.
+  // Параметры окна послебоевой статистики.
+  "battleResults": ${"battleResults.xc":"battleResults"},
+  
   "turretMarkers": { "highVulnerability": "*", "lowVulnerability": "'" },
   "texts": { "vtype": { "HT": "HT", "LT": "LT", "MT": "MT", "SPG": "SPG", "TD": "TD" } },
   // Icon sets.

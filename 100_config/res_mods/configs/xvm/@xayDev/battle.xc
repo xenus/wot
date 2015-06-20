@@ -41,7 +41,10 @@
   "fragCorrelation": {
     // true - hide textfields "Allies | Enemies".
     // true - спрятать два текстовых поля "Союзники | Противники".
-    "hideTeamTextFields": false
+    "hideTeamTextFields": false,
+    // true - show quantity of alive instead of dead
+    // true - показывать количество живых танков вместо убитых
+    "showAliveNotFrags": false
   },
   // Ingame crits panel by "expert" skill.
   // Внутриигровая панель критов от навыка "эксперт".
