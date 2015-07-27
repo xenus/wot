@@ -1,0 +1,250 @@
+--- gui_sounds.xml
++++ gui_sounds.xml
+@@ -7,0 +8,2 @@
++      <wwover>highlight</wwover>
++      <wwpress>	play	</wwpress>
+@@ -13,0 +16,2 @@
++          <wwover>highlight_red_butt</wwover>
++          <wwpress>	play	</wwpress>
+@@ -21,0 +26,2 @@
++          <wwover>highlight_red_butt</wwover>
++          <wwpress>grey_butt</wwpress>
+@@ -29,0 +36,2 @@
++          <wwover>highlight</wwover>
++          <wwpress>	yes1	</wwpress>
+@@ -31,26 +39,13 @@
+-        <groups>
+-		   <iconButton>
+-		   </iconButton>
+-		   <iconTextButton>
+-		   </iconTextButton>
+-		   <okButton>
+-		   </okButton>
+-		   <messengerButton>
+-		   </messengerButton>
+-		   <radioButton>
+-		   </radioButton>
+-		   <checkBox>
+-		   </checkBox>
+-		   <dropDownMenu>
+-		   </dropDownMenu>
+-		   <dropDownItemRenderer>
+-		   </dropDownItemRenderer>
+-		   <maintenanceDDRenderer>
+-		   </maintenanceDDRenderer>
+-		   <shellItemRenderer>
+-		   </shellItemRenderer>
+-		   <artefactRenderer>
+-		   </artefactRenderer>
+-		   <trainingBtn>
+-		   </trainingBtn>
+-		</groups>
++        <groups>iconButton
++					iconTextButton
++					okButton
++					messengerButton
++					radioButton
++					checkBox
++					dropDownMenu
++					dropDownItemRenderer
++					maintenanceDDRenderer
++					shellItemRenderer
++					artefactRenderer
++					trainingBtn
++					fortProcessRenderer</groups>
+@@ -61,0 +57,2 @@
++          <wwover>highlight</wwover>
++          <wwpress>cancelcloseno</wwpress>
+@@ -63,6 +60,2 @@
+-        <groups>
+-		   <closeWindow>
+-		  </closeWindow>
+-		  <cancelButton>
+-		  </cancelButton>
+-		</groups>
++        <groups>closeWindow
++					cancelButton</groups>
+@@ -73,0 +67,2 @@
++          <wwover>highlight</wwover>
++          <wwpress>	minimize	</wwpress>
+@@ -82,0 +78,3 @@
++          <wwover>highlight</wwover>
++          <wwpress>	play	</wwpress>
++          <wwclose>	minimize	</wwclose>
+@@ -90,0 +89,2 @@
++          <wwover>highlight</wwover>
++          <wwpress>highlightx</wwpress>
+@@ -98,0 +99,2 @@
++          <wwover>	carousel	</wwover>
++          <wwpress>tank_selection</wwpress>
+@@ -106,0 +109,12 @@
++          <wwover>highlight</wwover>
++          <wwpress>	tabb	</wwpress>
++        </sounds>
++        <groups>tab
++					accordion
++					arrow
++					contextmenu
++					scrollBtn</groups>
++      </tabCtl>
++      <numericStepper>
++        <sounds>
++          <limit>/fortified_area/gui/transport_constrain</limit>
+@@ -109,10 +122,0 @@
+-		  <tab>
+-		  </tab>
+-		  <accordion>
+-		  </accordion>
+-		  <arrow>
+-		  </arrow>
+-		  <contextmenu>
+-		  </contextmenu>
+-		  <scrollBtn>
+-		  </scrollBtn>
+@@ -120 +124 @@
+-      </tabCtl>
++      </numericStepper>
+@@ -125,0 +130,18 @@
++          <wwover>highlight</wwover>
++          <wwout>highlight</wwout>
++          <wwpress>	yes1	</wwpress>
++        </sounds>
++        <groups>itemRenderer
++					squad
++					rendererRecruit
++					shellRenderer
++					techTreeRenderer
++					barracksItemRendererBuy
++					barracksItemRenderer
++					barracksItemRendererEmpty
++					customizationItemRenderer</groups>
++      </rendererNormal>
++      <timerTick>
++        <sounds>
++          <press>/GUI/notifications_FX/cybersport_timer</press>
++          <wwpress>cybersport_timer</wwpress>
+@@ -128,18 +149,0 @@
+-		  <itemRenderer>
+-		  </itemRenderer>
+-		  <squad>
+-		  </squad>
+-		  <rendererRecruit>
+-		  </rendererRecruit>
+-		  <shellRenderer>
+-		  </shellRenderer>
+-		  <techTreeRenderer>
+-		  </techTreeRenderer>
+-		  <barracksItemRendererBuy>
+-		  </barracksItemRendererBuy>
+-		  <barracksItemRenderer>
+-		  </barracksItemRenderer>
+-		  <barracksItemRendererEmpty>
+-		  </barracksItemRendererEmpty>
+-		  <customizationItemRenderer>
+-		  </customizationItemRenderer>
+@@ -147 +151,28 @@
+-      </rendererNormal>
++      </timerTick>
++      <cybersportAutoSearch>
++        <sounds>
++          <press>/GUI/notifications_FX/cybersport_auto_search</press>
++          <wwpress>cybersport_auto_search</wwpress>
++        </sounds>
++        <groups>
++        </groups>
++      </cybersportAutoSearch>
++      <fort_building>
++        <sounds>
++          <over>/GUI/buttons/highlight</over>
++          <wwover>highlight</wwover>
++          <press>/fortified_area/gui/building_click</press>
++          <wwpress>building_click</wwpress>
++        </sounds>
++        <groups>base_building
++					warSchool_building
++					trophy_building
++					training_building
++					tankodrom_building
++					intendancy_building
++					finance_building
++					car_building
++					office_building
++					artillery_building
++					bomber_building</groups>
++      </fort_building>
+@@ -153,0 +185,9 @@
++    <wwspend_credits>coins</wwspend_credits>
++    <transport_enter>/fortified_area/gui/transport_enter</transport_enter>
++    <transport_exit>/fortified_area/gui/transport_exit</transport_exit>
++    <transport_first_step>/fortified_area/gui/transport_first_step</transport_first_step>
++    <transport_next_step>/fortified_area/gui/transport_next_step</transport_next_step>
++    <transport_approve>/fortified_area/gui/transport_approve</transport_approve>
++    <fort_create>/fortified_area/gui/fort_create</fort_create>
++    <direction_create>/fortified_area/gui/direction_create</direction_create>
++    <direction_close>/fortified_area/gui/direction_close</direction_close>
+@@ -154,0 +195 @@
++    <wwspend_gold>coins</wwspend_gold>
+@@ -155,0 +197 @@
++    <wwspend_credits_and_gold>coins</wwspend_credits_and_gold>
+@@ -156,0 +199 @@
++    <wwselect_radial_button>cancelcloseno</wwselect_radial_button>
+@@ -157,0 +201 @@
++    <wwearn_credits>coins</wwearn_credits>
+@@ -158,0 +203 @@
++    <wwearn_gold>coins</wwearn_gold>
+@@ -159,0 +205,36 @@
++    <wwearn_credits_and_gold>coins</wwearn_credits_and_gold>
++    <fort_entered_foundation_state>/fortified_area/gui/fort_entered_foundation_state</fort_entered_foundation_state>
++    <fort_fixed_in_building>/fortified_area/gui/fort_fixed_in_building</fort_fixed_in_building>
++    <fort_upgrade_building>/fortified_area/gui/fort_upgrade_building</fort_upgrade_building>
++    <fort_demount_building>/fortified_area/gui/fort_demount_building</fort_demount_building>
++    <fort_order_inprogress>/fortified_area/gui/fort_order_in_progress</fort_order_inprogress>
++    <fort_order_isready>/fortified_area/gui/fort_order_is_ready</fort_order_isready>
++    <activate_requisition>/fortified_area/gui/activate_battlePayments</activate_requisition>
++    <activate_evacuation>/fortified_area/gui/activate_battlePayments</activate_evacuation>
++    <activate_heavyTrucks>/fortified_area/gui/activate_battlePayments</activate_heavyTrucks>
++    <activate_militaryManeuvers>/fortified_area/gui/activate_battlePayments</activate_militaryManeuvers>
++    <activate_additionalBriefing>/fortified_area/gui/activate_battlePayments</activate_additionalBriefing>
++    <activate_tacticalTraining>/fortified_area/gui/activate_battlePayments</activate_tacticalTraining>
++    <activate_battlePayments>/fortified_area/gui/activate_battlePayments</activate_battlePayments>
++    <activate_specialMission>/fortified_area/gui/activate_battlePayments</activate_specialMission>
++    <activate_defencePeriod>/fortified_area/gui/dp_enable</activate_defencePeriod>
++    <deactivate_defencePeriod>/fortified_area/gui/dp_disable</deactivate_defencePeriod>
++    <enemyDirection_selected>/fortified_area/gui/dp_enemy_dir</enemyDirection_selected>
++    <enemyDirection_hover>/fortified_area/gui/empty_event</enemyDirection_hover>
++    <myDirection_selected>/fortified_area/gui/dp_docking_dir</myDirection_selected>
++    <fortClanWar_declared>/fortified_area/gui/dp_confirm_attack</fortClanWar_declared>
++    <battleRoom_timerAlert>/fortified_area/gui/dp_battle_timer</battleRoom_timerAlert>
++    <fortClanWarResult_win>/fortified_area/music/fa_win</fortClanWarResult_win>
++    <fortClanWarResult_lose>/fortified_area/music/fa_defeat</fortClanWarResult_lose>
++    <fortClanWarResult_draw>/fortified_area/music/fa_draw</fortClanWarResult_draw>
++    <base_building_endPrcBld>/fortified_area/gui/bulding_end_general</base_building_endPrcBld>
++    <warSchool_building_endPrcBld>/fortified_area/gui/bulding_end_general</warSchool_building_endPrcBld>
++    <trophy_building_endPrcBld>/fortified_area/gui/bulding_end_general</trophy_building_endPrcBld>
++    <training_building_endPrcBld>/fortified_area/gui/bulding_end_general</training_building_endPrcBld>
++    <tankodrom_building_endPrcBld>/fortified_area/gui/bulding_end_general</tankodrom_building_endPrcBld>
++    <intendancy_building_endPrcBld>/fortified_area/gui/bulding_end_general</intendancy_building_endPrcBld>
++    <finance_building_endPrcBld>/fortified_area/gui/bulding_end_general</finance_building_endPrcBld>
++    <car_building_endPrcBld>/fortified_area/gui/bulding_end_general</car_building_endPrcBld>
++    <office_building_endPrcBld>/fortified_area/gui/bulding_end_general</office_building_endPrcBld>
++    <artillery_building_endPrcBld>/fortified_area/gui/bulding_end_general</artillery_building_endPrcBld>
++    <bomber_building_endPrcBld>/fortified_area/gui/bulding_end_general</bomber_building_endPrcBld>
+@@ -160,0 +242 @@
++    <wwsound_mode_preview01>enemy_hp_damaged_by_projectile_by_player</wwsound_mode_preview01>
+@@ -161,0 +244 @@
++    <wwsound_mode_preview02>enemy_killed_by_player</wwsound_mode_preview02>
+@@ -162,0 +246,14 @@
++    <wwsound_mode_preview03>enemy_fire_started_by_player</wwsound_mode_preview03>
++    <cs_animation_league_up>/GUI/notifications_FX/league_up</cs_animation_league_up>
++    <wwcs_animation_league_up>league_up</wwcs_animation_league_up>
++    <cs_animation_league_down>/GUI/notifications_FX/league_down</cs_animation_league_down>
++    <wwcs_animation_league_down>league_down</wwcs_animation_league_down>
++    <cs_animation_division_up>/GUI/notifications_FX/division_up</cs_animation_division_up>
++    <wwcs_animation_division_up>division_up</wwcs_animation_division_up>
++    <cs_animation_division_down>/GUI/notifications_FX/division_down</cs_animation_division_down>
++    <wwcs_animation_division_down>division_down</wwcs_animation_division_down>
++    <cs_animation_division_up_alt>/GUI/notifications_FX/division_up</cs_animation_division_up_alt>
++    <wwcs_animation_division_up_alt>division_up</wwcs_animation_division_up_alt>
++    <dyn_squad_starting_dynamic_platoon>/GUI/dynamic_platoon/starting_dynamic_platoon</dyn_squad_starting_dynamic_platoon>
++    <wwdyn_squad_starting_dynamic_platoon>starting_dynamic_platoon</wwdyn_squad_starting_dynamic_platoon>
++    <rody_dog>/rudy/dog/dog</rody_dog>

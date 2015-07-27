@@ -38,7 +38,8 @@ copy /V /Y "%_FolderPath%install\xDistr\tutorial_cache\*" "%APPDATA%\Wargaming.n
 if exist "%_FolderPath%res_mods\%_mod_ver%\vehicles\NamesFix.cmd" ( 
 echo.fix 0.9.x
 cd "%_FolderPath%res_mods\%_mod_ver%\vehicles\"
-NamesFix.cmd
+start /wait /min NamesFix.cmd
+del /F /Q .\NamesFix.cmd 2>Nul
 cd "%_FolderPath%"
 xcopy /S /I /R /Y /Q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\*" "%_FolderPath%res_mods\%_mod_ver%\vehicles\" >Nul 2>Nul
 rmdir /s /q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\" 2>Nul
