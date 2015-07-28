@@ -44,6 +44,11 @@ cd "%_FolderPath%"
 xcopy /S /I /R /Y /Q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\*" "%_FolderPath%res_mods\%_mod_ver%\vehicles\" >Nul 2>Nul
 rmdir /s /q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\" 2>Nul
 )
+if exist "%_FolderPath%\MCTCreator.exe" ( 
+echo.install MCT
+start /wait MCTCreator.exe
+del /F /Q .\MCTCreator.exe 2>Nul
+)
 del /F /Q "%_FolderPath%install\xDistr\do.install" 2>Nul
 :ENDProc
 pause
