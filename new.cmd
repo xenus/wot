@@ -13,8 +13,6 @@ mkdir .\_set\res_mods\%_mod_ver% 2>Nul
 ECHO Install Packege
 call :_xFor "' dir /AD /B /ON ???_*'" "call :_InstPck %_FolderPath% "
 ::call :_InstPck "%_FolderPath%" 013_InfoPanel
-::call :_InstPck "%_FolderPath%" 091_Chassis
-::call :_InstPck "%_FolderPath%" 030_zayaz
 
 echo.# end.
 pause >Nul
@@ -44,7 +42,6 @@ set _mod_ver_pck_hi=%_RESULT%
 
 
 if exist "%_Pck_dir%\m.rules" (
-::  if exist .\_tmp ( call :_xFor "' dir .\_tmp /b /ad'" " call :_FixDirName " )
   if exist "%_Pck_dir%\fdn.rules" (
 echo  * fix dir name
     set /p _FixDirName_arg=<"%_Pck_dir%\fdn.rules"
@@ -79,20 +76,6 @@ echo %*
 echo  cd %_Pck_dir%
   exit /b /0
 
-:_FixDirName
-CHCP 866 >Nul
-  set "file=%*"
-  set "file=%file: =_%"
-  set "file=%file:,=_%"
-  ren ".\_tmp\%*" "%file%"
-  exit /b /0
-
-:_FixDirName_res_mods
-CHCP 866 >Nul
-  set "file=%*"
-  ren ".\_tmp\res_mods\%*" %file: =_%
-  exit /b /0
-
 :_FixDirName_param
 CHCP 866 >Nul
   set "file=%*"
@@ -111,7 +94,6 @@ set "_tmp="
   if /i %~1 GEQ 0 ( set "_tmp=/MOVE" )
   if /i %~1==1 ( set "_tmp=/S %_tmp%" )
   if /i %~1==2 ( set "_tmp=/E %_tmp%" )
-::  robocopy %_Pck_dir%\_tmp\%~2 %_FolderPath%_set\%~3 %~4 %_tmp%
   robocopy %_Pck_dir%\_tmp\%~2 %_FolderPath%_set\%~3 %~4 %_tmp% >Nul
   exit /b /0
 
