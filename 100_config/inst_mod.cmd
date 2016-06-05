@@ -1,13 +1,15 @@
 @ECHO OFF
-setlocal
+setlocal enabledelayedexpansion enableextensions
 set _FolderPath=%~d0%~p0
+set a_Labale=audio
 set a_wDir=audio
 set a_fExt1=fsb
 set a_fExt2=fev
+set t_Labale=text
 set t_wDir=text\LC_MESSAGES
 set t_fExt1=mo
 cd /d "%_FolderPath%"
-if NOT exist "%_FolderPath%\WorldOfTanks.exe" (echo.[!]ERROR: It's not a game dir&ENDLOCAL&GOTO :ENDProc)
+if NOT exist "%_FolderPath%\WorldOfTanks.exe" (ENDLOCAL&echo.[!]ERROR: It's not a game dir&GOTO :ENDProc)
 
 set "_RESULT="
   For /F "tokens=*" %%i in ('dir /AD /B /ON .\res_mods\0.* 2^>Nul') do (call :_getMaxInt %%i%~3)
@@ -25,13 +27,10 @@ For /F "tokens=*" %%i in ('dir /AD /B /ON %APPDATA%\Wargaming.net\WorldOfTanks\*
   if /i tutorial_cache NEQ %%i%~3 ( rmdir /s /q %APPDATA%\Wargaming.net\WorldOfTanks\%%i%~3))
   )
 if NOT exist "%_FolderPath%install\xDistr\do.install" (ENDLOCAL&GOTO :ENDProc)
-echo.install audio
 call :_setup a
-echo.install text
 call :_setup t
 echo.install xvm.DB
 md "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" 2>Nul
-::copy /V /Y "%_FolderPath%install\xDistr\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" >Nul
 robocopy "%_FolderPath%install\xDistr\xvm\db" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm" /S >Nul
 echo.install cache
 md "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" 2>Nul
@@ -73,6 +72,7 @@ ENDLOCAL
   del /F /Q %temp%\xtmp.txt 2>Nul
   call :_initVar %1
 if exist "%_wDir%" ( 
+echo.install %_Labale%
   if /i 99%_fExt1% NEQ 99 ( dir /b "%_wDir%\*.%_fExt1%" >> %temp%\xtmp.txt )
   if /i 99%_fExt2% NEQ 99 ( dir /b "%_wDir%\*.%_fExt2%" >> %temp%\xtmp.txt )
   if /i 99%_fExt3% NEQ 99 ( dir /b "%_wDir%\*.%_fExt3%" >> %temp%\xtmp.txt )
@@ -88,20 +88,11 @@ if exist "%_wDir%" (
   exit /b /0
 
 :_initVar
-if %1==a (
-  set _wDir=%_FolderPath%res_mods\%_mod_ver%\%a_wDir%
-  set _sDir=%_FolderPath%res\%a_wDir%
-  set _fExt1=%a_fExt1%
-  set _fExt2=%a_fExt2%
-  set _fExt3=%a_fExt3%
-)
-if %1==t (
-  set _wDir=%_FolderPath%res_mods\%_mod_ver%\%t_wDir%
-  set _sDir=%_FolderPath%res\%t_wDir%
-  set _fExt1=%t_fExt1%
-  set _fExt2=%t_fExt2%
-  set _fExt3=%t_fExt3%
-)
+  set _Labale=!%1_Labale!
+  set _wDir=%_FolderPath%res_mods\%_mod_ver%\!%1_wDir!
+  set _sDir=%_FolderPath%res\!%1_sDir!
+  set _fExt1=!%1_fExt1!
+  set _fExt2=!%1_fExt2!
   exit /b /0
 
 :_getMaxInt
