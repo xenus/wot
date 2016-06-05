@@ -22,6 +22,9 @@
     // true - enable {{marksOnGun}} macro in players panels and minimap. WARNING: performance expensive
     // true - включить макрос {{marksOnGun}} в ушах и на миникарте. ВНИМАНИЕ: может понизить производительность
     "allowMarksOnGunInPanelsAndMinimap": false,
+    // true - enable custom labels on battle interface window
+    // true - показывать пользовательские текстовые поля в окне боевого интерфейса
+    "allowLabelsOnBattleInterface": true,
     // Format of clock on the Debug Panel (near FPS).
     // Формат часов на экране панели отладки (возле FPS).
     "clockFormat": "H:N", // TODO: "H:i"
@@ -30,18 +33,22 @@
     "clanIconsFolder": "clanicons/",
     // Path to sixth sense icon ("" for original icon).
     // Путь к иконке 6-го чувства ("" для оригинальной иконки).
-//    "sixthSenseIcon": "xvm://res/SixthSense.png",
-    "sixthSenseIcon": "",
+    "sixthSenseIcon": "xvm://res/SixthSense.png",
+//    "sixthSenseIcon": "",
     // GUI elements settings (experts only)
     // Настройки графических элементов (только для экспертов!)
-    "elements": ${"elements.xc":"elements"}
+//    "elements": ${"elements.xc":"elements"},
+    "elements": ${"elements/elements.xc":"true"},
+    // Camera settings
+    // Настройки камеры
+    "camera": ${"camera.xc":"camera"},
+    // Switching between players on the minimap after death
+    // Переключение между игроками по миникарте после смерти
+    "minimapDeadSwitch": true
   },
   // Frag counter panel at top side of battle windows interface.
   // Панель счёта в бою.
   "fragCorrelation": {
-    // true - hide textfields "Allies | Enemies".
-    // true - спрятать два текстовых поля "Союзники | Противники".
-    "hideTeamTextFields": false,
     // true - show quantity of alive instead of dead
     // true - показывать количество живых танков вместо убитых
     "showAliveNotFrags": false

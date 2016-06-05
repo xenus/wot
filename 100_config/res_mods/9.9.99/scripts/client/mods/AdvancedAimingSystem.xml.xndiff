@@ -1,5 +1,0 @@
---- AdvancedAimingSystem.xml
-+++ AdvancedAimingSystem.xml
-@@ -11 +11 @@
--	<ignoreClientVersion>False</ignoreClientVersion>
-+	<ignoreClientVersion>True</ignoreClientVersion>

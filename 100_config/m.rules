@@ -2,6 +2,6 @@
 -2	..\.\install\	install\
 -1	..\.	install\xDistr\	do.install
 -2	..\.\res_mods\9.9.99\	res_mods\%_mod_ver%\
--2	..\.\res_mods\configs\	res_mods\configs\
+-2	..\.\res_mods\configs\	res_mods\configs\	*.xc
+-2	..\.\res_mods\configs\	res_mods\configs\	*.py
 -2	..\.\res_mods\mods\	res_mods\mods\
--1	..\.\res_mods\ModSettings\	res_mods\ModSettings\

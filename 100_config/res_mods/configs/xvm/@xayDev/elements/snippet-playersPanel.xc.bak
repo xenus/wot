@@ -1,0 +1,20 @@
+﻿// Players panels
+// Панели игроков (уши)
+{
+	"$delay": 100,
+	// Left panel
+	// Левая панель игроков (ухо)
+	"leftPanel": {
+		"_y": null
+	},
+	// Right panel
+	// Правая панель игроков (ухо)
+	"rightPanel": {
+		"_y": null
+	},
+	// Players panels switcher
+	// Переключатель режимов панелей игроков
+	"switcher_mc": {
+		"_y": "leftPanel._y - 28"
+	}
+}

@@ -16,28 +16,44 @@
     // Spacing between carousel cells.
     // Отступ между ячейками карусели.
     "padding": {
-        "horizontal": 10,   // по горизонтали
-        "vertical": 2       // по вертикали
+      "horizontal": 10,   // по горизонтали
+      "vertical": 2       // по вертикали
     },
+    // Background transparency (default - 60)
+    // Прозрачность подложки (по умолчанию - 60)
+    "backgroundAlpha": 60,
+    // Scrolling speed (default - 20)
+    // Скорость прокрутки (по умолчанию - 20)
+    "scrollingSpeed": 20,
     // true - show filters even if all tanks fit on the screen.
     // true - показывать фильтры даже если все танки помещаются на экране.
     "alwaysShowFilters": false,
-    // true - hide cell "Buy tank".
-    // true - скрыть ячейку "Купить танк".
+    // true - hide cell "Buy vehicle".
+    // true - скрыть ячейку "Купить машину".
     "hideBuyTank": true,
     // true - hide cell "Buy slot".
     // true - скрыть ячейку "Купить слот".
     "hideBuySlot": true,
+    // true - show total slots count in the "Buy vehicle" cell.
+    // true - показывать общее количество слотов в ячейке "Купить машину".
+    "showTotalSlots": false,
+    // true - show used slots count in the "Buy slot" cell.
+    // true - показывать количество занятых слотов в ячейке "Купить слот".
+    "showUsedSlots": true,
     // Visibility filters.
     // Видимость фильтров.
     "filters": {
       // false - hide filter.
       // false - скрыть фильтр.
-      "nation":   { "enabled": false },  // nation           / страна
-      "type":     { "enabled": false },  // vehicle class    / тип техники
-      "level":    { "enabled": false },  // vehicle level    / уровень техники
-      "favorite": { "enabled": true },  // favorite tanks   / основные танки
-      "prefs":    { "enabled": true }   // other filters    / другие фильтры
+      "params":   { "enabled": true },  // main params        / основные параметры
+      "bonus":    { "enabled": true },  // x2 bonus           / x2 бонус
+      "favorite": { "enabled": true }   // favorite tanks     / основные танки
+    },
+    // Spacing between filters cells.
+    // Отступ между ячейками фильтров.
+    "filtersPadding": {
+      "horizontal": 11,   // по горизонтали
+      "vertical": 13      // по вертикали
     },
     // Standard cell elements.
     // Стандартные элементы ячеек.
@@ -62,7 +78,19 @@
       "xp":       { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
       // Vehicle name.
       // Название танка.
-      "tankName": { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 }
+      "tankName": { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
+      // Status text (Crew incomplete, Repairs required)
+      // Статусный текст (Неполный экипаж, Требуется ремонт).
+      "statusText": { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
+      // Status text for "Buy vehicle" and "Buy slot" slots.
+      // Статусный текст для слотов "Купить машину" и "Купить слот".
+      "statusTextBuy": { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
+      // Clan lock timer
+      // Таймер блокировки танка
+      "clanLock":   { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
+      // Activate / deactivate button.
+      // Кнопка активации / деактивации.
+      "activateButton": { "dx": 0, "dy": 0, "alpha": 100, "scale": 1 }
     },
     // Extra cell fields (see playersPanel.xc).
     // Дополнительные поля ячеек (см. playersPanel.xc).
@@ -78,6 +106,20 @@
       { "x": 116, "y": 46, "align": "right", "format": "<font color='{{v.c_damageRating}}' size='10'><b>{{v.damageRating}}%</b></font>", "alpha": "{{v.hitsRatio?100|0}}" },
       // Количество боев.
       { "x": 20, "y": 15, "format": "<b><font face='$FieldFont' size='10'><font color='{{v.c_battles}}'>{{v.battles|--}}</font></b>","shadow": {"blur":8, "strength": 3} }
-    ]
+    ],
+    // Order of nations.
+    // Порядок наций.
+    //"nations_order": ["ussr", "germany", "usa", "france", "uk", "china", "japan", "czech"],
+    "nations_order": [],
+    // Order of types of vehicles.
+    // Порядок классов техники.
+    "types_order":   ["lightTank", "mediumTank", "heavyTank", "AT-SPG", "SPG"],
+    // Tank sorting criteria, available options: (minus = reverse order)
+    // Критерии сортировки танков, доступные значения: (минус = в обратном порядке)
+    // "nation", "type", "level", "maxBattleTier", "premium", "winRate", "-level", "-maxBattleTier", "-premium", "-winRate"
+    "sorting_criteria": ["nation", "type", "level"],
+    // Suppress the tooltips for tanks in carousel
+    // Убрать подсказки к танкам в карусели
+    "suppressCarouselTooltips": false
   }
 }

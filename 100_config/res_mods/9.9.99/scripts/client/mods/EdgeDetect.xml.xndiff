@@ -1,5 +1,0 @@
---- EdgeDetect.xml
-+++ EdgeDetect.xml
-@@ -10 +10 @@
--	<ignoreClientVersion>False</ignoreClientVersion>
-+	<ignoreClientVersion>True</ignoreClientVersion>

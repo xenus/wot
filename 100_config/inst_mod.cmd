@@ -31,7 +31,8 @@ echo.install text
 call :_setup t
 echo.install xvm.DB
 md "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" 2>Nul
-copy /V /Y "%_FolderPath%install\xDistr\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" >Nul
+::copy /V /Y "%_FolderPath%install\xDistr\xvm\db\*" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm\" >Nul
+robocopy "%_FolderPath%install\xDistr\xvm\db" "%APPDATA%\Wargaming.net\WorldOfTanks\xvm" /S >Nul
 echo.install cache
 md "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" 2>Nul
 copy /V /Y "%_FolderPath%install\xDistr\tutorial_cache\*" "%APPDATA%\Wargaming.net\WorldOfTanks\tutorial_cache\" >Nul
@@ -44,10 +45,23 @@ cd "%_FolderPath%"
 xcopy /S /I /R /Y /Q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\*" "%_FolderPath%res_mods\%_mod_ver%\vehicles\" >Nul 2>Nul
 rmdir /s /q "%_FolderPath%res_mods\%_mod_ver%\vehicles2\" 2>Nul
 )
-if exist "%_FolderPath%\MCTCreator.exe" ( 
-echo.install MCT
-start /wait MCTCreator.exe
+if exist "%_FolderPath%res_mods\%_mod_ver%\content\DDSColorChanger.exe" ( 
+echo.install MCT#1
+cd "%_FolderPath%res_mods\%_mod_ver%\content\"
+start /wait DDSColorChanger.exe $FFFFFF mle
+start /wait DDSColorChanger.exe $FFFFFF rw _crash.dds
+start /wait DDSColorChanger.exe $FFFFFF rw _crash_hd.dds
+start /wait DDSColorChanger.exe $DD7744 rw /_crash.dds /_crash_hd.dds
+del /F /Q .\DDSColorChanger.exe 2>Nul
+cd "%_FolderPath%"
+)
+if exist "%_FolderPath%MCTCreator.exe" ( 
+echo.install MCT#2
+::start /wait MCTCreator.exe --wot-path="%_FolderPath%" --DPT-mod=FFFFFF --ITS-mod=B0B0B0 --CT-mod=367EFF
+start /wait MCTCreator.exe --wot-path="%_FolderPath%" --DPT-mod=FFFFFF --ITS-mod=B0B0B0 --CT-mod=367EFF --MEM-mod=FFFFFF --WCT-mod=DD7744 --DCT-mod=FFFFFF
 del /F /Q .\MCTCreator.exe 2>Nul
+For /F "tokens=*" %%i in (.\MCTCreator.clean) do (del /F /Q .\%%i 2>Nul)
+del /F /Q .\MCTCreator.clean 2>Nul
 )
 del /F /Q "%_FolderPath%install\xDistr\do.install" 2>Nul
 :ENDProc
