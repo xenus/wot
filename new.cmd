@@ -12,7 +12,7 @@ mkdir .\_set\res_mods\%_mod_ver% 2>Nul
 
 ECHO Install Packege
 call :_xFor "' dir /AD /B /ON ???_*'" "call :_InstPck %_FolderPath% "
-::call :_InstPck "%_FolderPath%" 013_InfoPanel
+::call :_InstPck "%_FolderPath%" 030_zayaz
 
 echo.# end.
 pause >Nul
@@ -44,8 +44,11 @@ set _mod_ver_pck_hi=%_RESULT%
 if exist "%_Pck_dir%\m.rules" (
   if exist "%_Pck_dir%\fdn.rules" (
 echo  * fix dir name
-    set /p _FixDirName_arg=<"%_Pck_dir%\fdn.rules"
-    if exist .\_tmp!_FixDirName_arg! ( call :_xFor "' dir .\_tmp!_FixDirName_arg! /b /ad'" " call :_FixDirName_param " ))
+      For /F "tokens=*" %%j in (%_Pck_dir%\fdn.rules) do ( 
+        set _FixDirName_arg=%%j
+        if exist .\_tmp%%j ( call :_xFor "' dir .\_tmp%%j /b /ad'" " call :_FixDirName_param " ) 
+      )
+  )
 echo  * copy
   call :_xFor "%_Pck_dir%\m.rules" "call :_Pck_move " )
 
@@ -79,7 +82,7 @@ echo  cd %_Pck_dir%
 :_FixDirName_param
 CHCP 866 >Nul
   set "file=%*"
-  ren ".\_tmp%_FixDirName_arg%\%*" %file: =_%
+  ren ".\_tmp%_FixDirName_arg%%*" %file: =_%
   exit /b /0
 
 :_UnPack
