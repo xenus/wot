@@ -10,7 +10,23 @@
       ${ "battleLabelsTemplates.xc":"def.winChance" },
       ${ "battleLabelsTemplates.xc":"def.totalHP" },
       //${ "battleLabelsTemplates.xc":"def.test" },
-      ${ "battleLabelsTemplates.xc":"def.test2" }
+      ${ "battleLabelsTemplates.xc":"def.test2" },
+
+      ${ "battleLabelsTemplates.xc":"def.totalHPally" },
+      ${ "battleLabelsTemplates.xc":"def.totalHPenemy" },
+
+      ${ "battleLabelsTemplates.xc":"def.healthBar_backgroundAlly" },
+      ${ "battleLabelsTemplates.xc":"def.healthBar_backgroundEnemy" },
+
+      ${ "battleLabelsTemplates.xc":"def.healthBarAlly" },
+      ${ "battleLabelsTemplates.xc":"def.healthBarEnemy" },
+
+      ${ "battleLabelsTemplates.xc":"def.mainGun" },
+      ${ "battleLabelsTemplates.xc":"def.damagePercent" },
+
+      //${ "battleLabelsTemplates.xc":"def.superiority" },
+
+      ${ "battleLabelsTemplates.xc":"def.superiority_text" }
     ]
   }
 }

@@ -188,6 +188,152 @@
       "shadow": { "distance": 1, "angle": 90, "alpha": 80, "strength": 8},
       "currentFieldDefaultStyle": { "color": "0x60FF00", "size": 15, "leading": -20, "marginLeft": 2, "marginRight": 2},
       "format": "<font color='#FFFFFF'><p align='center'><b>Info text field (WN8:&nbsp;<font color='{{c:wn8}}'>{{wn8}}</font>)</b></p></font><br/>Battle tier:<font color='#ff1aff'>&nbsp;{{battletier}}</font><p align='right'>My vehicle:&nbsp;<font color='#ff1aff'>{{my-vehicle}}</font>&nbsp;(<font color='{{c:t-winrate}}'>{{t-winrate%2d}}%</font>)</p>"
+    },
+    // Shadow options.
+    // Параметры тени.
+    "shadow": {
+      "alpha": 60,         // Прозрачность.
+      "color": "0x000000", // Цвет.
+      "angle": 0,          // Угол смещения.
+      "distance": 0,       // Дистанция смещения.
+      "blur": 3,           // Размытие.
+      "strength": 5        // Интенсивность.
+    },
+    "shadow_healthBar": {
+      "$ref": { "path": "def.shadow" },
+      "alpha": 80,         // Прозрачность.
+      "blur": 2,           // Размытие.
+      "strength": 2        // Интенсивность.
+    },
+    "shadow_healthBar_background": {
+      "$ref": { "path": "def.shadow" },
+      "alpha": 60,         // Прозрачность.
+      "blur": 1,           // Размытие.
+      "strength": 1        // Интенсивность.
+    },
+    
+    // Очки прочности союзников.
+    "totalHPally": {
+      "enabled": true,
+      "updateEvent": "ON_PLAYERS_HP_CHANGED",
+      "x": -305,
+      "y": 1,
+      "width": 200,
+      "height": 40,
+      "autoSize": "right",
+      "align": "center",
+      "shadow": ${"def.shadow"},
+      "currentFieldDefaultStyle": { "color": "0xFFFFFF", "size": 20 },
+      "format": "<font face='$TitleFont'>{{py:nelx.total_hp(0)}}</font>"
+    },
+    // Очки прочности противников.
+    "totalHPenemy": {
+      "$ref": { "path": "def.totalHPally" },
+      "x": 305,
+      "autoSize": "left",
+      "format": "<font face='$TitleFont'>{{py:nelx.total_hp(1)}}</font>"
+    },
+
+    // ПОЛОСА ОЧКОВ ПРОЧНОСТИ.
+    // Союзников.
+    "healthBarAlly": {
+      "enabled": true,
+      "updateEvent": "ON_PLAYERS_HP_CHANGED",
+      "x": -140,
+      "y": 7,
+      "width": 200,
+      "height": 40,
+      "autoSize": "right",
+      "align": "center",
+      "shadow": ${"def.shadow_healthBar"},
+      "currentFieldDefaultStyle": { "color": "{{.colors.system.ally_alive}}", "size": 16 },
+      "format": "{{py:nelx.total_hp.healthBar(0)}}"
+    },
+    // Противников.
+    "healthBarEnemy": {
+      "$ref": { "path": "def.healthBarAlly" },
+      "x": 140,
+      "autoSize": "left",
+      "currentFieldDefaultStyle": { "color": "{{.colors.system.enemy_alive}}", "size": 16 },
+      "format": "{{py:nelx.total_hp.healthBar(1)}}"
+    },
+
+    // ФОН ДЛЯ ПОЛОСЫ ОЧКОВ ПРОЧНОСТИ.
+    // Союзников.
+    "healthBar_backgroundAlly": {
+      "enabled": true,
+      "x": -140,
+      "y": 7,
+      "width": 200,
+      "height": 40,
+      "autoSize": "right",
+      "align": "center",
+	  "alpha": 30,
+      "shadow": ${"def.shadow_healthBar_background"},
+      "currentFieldDefaultStyle": { "color": "0x000000", "size": 16 },
+      "format": "{{py:nelx.total_hp.healthBar_background(0)}}"
+    },
+    // Противников.
+    "healthBar_backgroundEnemy": {
+      "$ref": { "path": "def.healthBar_backgroundAlly" },
+      "x": 140,
+      "autoSize": "left",
+      "format": "{{py:nelx.total_hp.healthBar_background(1)}}"
+    },
+    
+    // Индикатор, перемещяющийся в зависимости от перевеса ХП.
+    "superiority": {
+      "enabled": true,
+      "updateEvent": "ON_PLAYERS_HP_CHANGED",
+      "x": 1,
+      "y": 24,
+      "width": 200,
+      "height": 40,
+      "autoSize": "center",
+      "align": "center",
+      "shadow": ${"def.shadow"},
+      "currentFieldDefaultStyle": { "color": "0xF4EFE8", "size": 24 },
+      "format": "<font face='$TitleFont' color='#{{py:nelx.total_hp.color()}}'>{{py:nelx.total_hp.superiority()}}</font>"
+    },
+    
+    // Процент, на который лидирующая команда превосходит проигрывающую по очкам прочности.
+    "superiority_text": {
+      "enabled": false,
+      "updateEvent": "ON_PLAYERS_HP_CHANGED",
+      "x": 0,
+      "y": 40,
+      "width": 200,
+      "height": 40,
+      "autoSize": "center",
+      "align": "center",
+      "shadow": ${"def.shadow"},
+      "currentFieldDefaultStyle": { "color": "0xF4EFE8", "size": 14 },
+      "format": "<font face='$TitleFont'>{{py:nelx.total_hp.superiority_text()}}</font>"
+    },
+	
+    // Урон до получения медали "Основной Калибр".
+    "mainGun": {
+      "enabled": true,
+      "updateEvent": "ON_PLAYERS_HP_CHANGED",
+      "x": 360,
+      "y": -2,
+      "width": 200,
+      "height": 40,
+      "autoSize": "left",
+      "align": "center",
+      "shadow": ${"def.shadow"},
+      "currentFieldDefaultStyle": { "color": "0xFFFFAB", "size": 18 },
+      "format": "<font face='$TitleFont'>{{py:nelx.mainGun()}}</font>"
+    },
+
+    // Процент нанесенного урона.
+    "damagePercent": {
+      "enabled": true,
+      "$ref": { "path": "def.mainGun" },
+      "x": -360,
+      "y": 0,
+      "autoSize": "right",
+      "format": "<font face='$TitleFont'>{{py:nelx.damagePercent()}}</font>"
     }
   }
 }

@@ -1,7 +1,4 @@
 8d461fc93649dc5b517bebc4a3758bbb *ver
-c6039090001da0fcaec11fd2445283a8 *100_config\res_mods\configs\xvm\@xayDev\battleLabels.xc.alt
-1582f1d86f859827ea031bda67e38f4f *100_config\res_mods\configs\xvm\@xayDev\battleLabelsTemplates.xc.alt
-8158eeb5367ba4a1f8b3d48308a52258 *100_config\res_mods\configs\xvm\@xayDev\captureBar.xc.alt
 05cd5c8ea63be192d29314e43b27e691 *100_config\res_mods\configs\xvm\@xayDev\minimapAlt.xc.bak
 f68267255945d89b7335ebd6525c27ca *100_config\res_mods\configs\xvm\@xayDev\mix_battleLoading_statisticForm.xc.bak
 c37680810b14c129c306f67565b634bf *100_config\res_mods\configs\xvm\@xayDev\elements\snippet-playersPanel.xc.bak
@@ -1472,12 +1469,10 @@ d41d8cd98f00b204e9800998ecf8427e *100_config\p.rules
 81ff29137580dc9b1ea935cb56430ea2 *info.txt
 4e2ddcfb44a187c2787b5dd1d9eccdbc *100_config\res_mods\configs\xvm\@xayDev\info.txt
 da3929383a84201f10d63f99d1b313c6 *100_config\res_mods\9.9.99\readme.txt
-ca291cf72d068b47c5956df65f03a349 *100_config\res_mods\configs\xvm\@xayDev\battleLabels.xc.wip
-b37676dab2f812d2c4f212828c5ff760 *100_config\res_mods\configs\xvm\@xayDev\battleLabelsTemplates.xc.wip
 ee93cd3e169732ba15f533cf5cf038aa *100_config\res_mods\configs\xvm\@xayDev\alpha.xc
 ae154a1cd78e69bf0552187c37783632 *100_config\res_mods\configs\xvm\@xayDev\battle.xc
-cf30e2ca11eb3fd857d0932f74fda2e0 *100_config\res_mods\configs\xvm\@xayDev\battleLabels.xc
-14a403325d40caa479059b116b2517ea *100_config\res_mods\configs\xvm\@xayDev\battleLabelsTemplates.xc
+9fcbfb00738d5f3ac0efdb9fdad1e217 *100_config\res_mods\configs\xvm\@xayDev\battleLabels.xc
+b37676dab2f812d2c4f212828c5ff760 *100_config\res_mods\configs\xvm\@xayDev\battleLabelsTemplates.xc
 40cefc8759b424297a43705a7ee73b5a *100_config\res_mods\configs\xvm\@xayDev\battleResults.xc
 7e9e1a2b02ff2373b55ff53454afb85f *100_config\res_mods\configs\xvm\@xayDev\camera.xc
 c338621dc8b8803bb8c9e271832110f8 *100_config\res_mods\configs\xvm\@xayDev\captureBar.xc
