@@ -1,0 +1,18 @@
+--- infoPanel.py
++++ infoPanel.py
+@@ -22 +22 @@
+-    '{{invis_move_shot}}', '{{vision_radius}}', '{{radio_name}}', '{{radio_radius}}'
++    '{{invis_move_shot}}', '{{vision_radius}}', '{{radio_name}}', '{{radio_radius}}', '{{self_vehicle_weight}}'
+@@ -110,0 +111,12 @@
++
++@xvm.export('gun_clip', deterministic=False)
++def gun_clip():
++    return info_panel_data.gun_clip()
++
++@xvm.export('vehicle_weight', deterministic=False)
++def vehicle_weight():
++    return info_panel_data.vehicle_weight()
++
++@xvm.export('self_vehicle_weight', deterministic=False)
++def self_vehicle_weight():
++    return info_panel_data.self_vehicle_weight()

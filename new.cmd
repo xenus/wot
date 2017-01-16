@@ -4,15 +4,16 @@ set _CMD_name=%~nx0
 set _FolderPath=%~d0%~p0
 SET PATH=%PATH%;%_FolderPath%_bin
 set /p _mod_ver=<"%_FolderPath%ver"
+< "%_FolderPath%ver" (set /p=& set /p _mod_ver2=)
 cd /d "%_FolderPath%"
 
 echo.# init
 call :_RD .\_set
-mkdir .\_set\res_mods\%_mod_ver% 2>Nul
+mkdir .\_set\res_mods\%_mod_ver2% 2>Nul
 
 ECHO Install Packege
 call :_xFor "' dir /AD /B /ON ???_*'" "call :_InstPck %_FolderPath% "
-::call :_InstPck "%_FolderPath%" 030_zayaz
+::call :_InstPck "%_FolderPath%" 100_config
 
 echo.# end.
 pause >Nul

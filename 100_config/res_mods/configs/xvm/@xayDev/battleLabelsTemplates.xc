@@ -3,337 +3,295 @@
  * Текстовые поля боевого интерфейса.
  */
 {
+  // Definitions.
+  // Шаблоны.
   "def": {
-    /**
-      Set of formats fields available for configuring (default value applyed, when parameter is not defined):
-      Набор форматов полей доступных для настройки (значение по-умолчанию применяется, если параметр не указан):
-     ┌────────────────────────────┬──────────────────────────────────────────────────────────────────────────
-     │ Parameters / Параметры     │ Description / Описание
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "enabled"                  │ enable/disable field creation: true or false (default: false)
-     │                            │ включить/отключить создание полей: true or false (по-умолчанию: false)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "updateEvent"              │ event on which field updates, use with dynamic macros; to disable define null value or delete parameter;
-     │                            │ allowed events: "ON_BATTLE_STATE_CHANGED", "ON_PLAYERS_HP_CHANGED", "ON_VEHICLE_DESTROYED", "ON_CURRENT_VEHICLE_DESTROYED", "ON_MODULE_DESTROYED", "ON_MODULE_REPAIRED"
-     │                            │ событие по которому обновляется поле, используйте динамические макросы; для отключения используйте значение null или удалите параметр;
-     │                            │ доступные события: "ON_BATTLE_STATE_CHANGED", "ON_PLAYERS_HP_CHANGED", "ON_VEHICLE_DESTROYED", "ON_CURRENT_VEHICLE_DESTROYED", "ON_MODULE_DESTROYED", "ON_MODULE_REPAIRED"
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "hotKeyCode"               │ keyboard key code (see list in hotkeys.xc), when pressed - switches text field to show and apply configured html in "format", or hide;
-     │                            │ when defined, text field will not be shown until key is pressed, to disable define null value or delete parameter
-     │                            │ горячие клавиши клавиатуры (список в hotkeys.xc), при нажатии - выводится текстовое поле и применяются параметры html в "format", или скрывается поле;
-     │                            │ текстовое поле не будет отображаться, пока не будет нажата клавиша, для отключения используйте значение null или удалите параметр;
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "onHold"                   │ take action by key click; true - while key is remains pressed (default: false)
-     │                            │ false - производит действие по разовому нажатию клавиши; true - по удержанию (по-умолчанию: false)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "x"                        │ x position (macros allowed) (default: 0)
-     │                            │ положение по оси x (доступно использование макросов) (по-умолчанию: 0)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "y"                        │ y position (macros allowed) (default: 0)
-     │                            │ положение по оси y (доступно использование макросов) (по-умолчанию: 0)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "width"                    │ width (macros allowed) (default: 0)
-     │                            │ ширина элемента (доступно использование макросов) (по-умолчанию: 0)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "height"                   │ height (macros allowed) (default: 0)
-     │                            │ высота элемента (доступно использование макросов) (по-умолчанию: 0)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "alpha"                    │ transparency in percents (0..100) (macros allowed) (default: 100)
-     │                            │ прозрачность элемента, в процентах (0..100) (доступно использование макросов) (по-умолчанию: 100)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "rotation"                 │ rotation in degrees (0..360) (macros allowed) (default: 0)
-     │                            │ поворот элемента, в градусах (доступно использование макросов) (по-умолчанию: 0)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "scaleX"                   │ scaling axis X in % (use negative values for mirroring) (default: 100)
-     │                            │ масштабирование по оси x в % (используйте отрицательные значения для зеркального отображения) (по-умолчанию: 100)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "scaleY"                   │ scaling axis Y (%, use negative values for mirroring) (default: 100)
-     │                            │ масштабирование по оси y (%, используйте отрицательные значения для зеркального отображения) (по-умолчанию: 100)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "autoSize"                 │ controls automatic sizing and alignment of text fields ("none", "left" [default], "right", "center")
-     │                            │ управление автоматической настройкой размеров и выравниванием текстовых полей ("none", "left" [по-умолчанию], "right", "center")
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "align"                    │ horizontal alignment ("left" [default], "center", "right")
-     │                            │ горизонтальное выравнивание ("left" [по-умолчанию], "center", "right")
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "valign"                   │ vertical alignment ("top" [default], "center", "bottom")
-     │                            │ вертикальное выравнивание ("top" [по-умолчанию], "center", "bottom")
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "antiAliasType"            │ sets anti-aliasing to advanced anti-aliasing ("advanced" [default] or "normal")
-     │                            │ задает использование расширенных возможностей сглаживания ("advanced" [по-умолчанию] or "normal")
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "bgColor"                  │ if set, draw background with specified color (macros allowed) (default: null)
-     │                            │ окрашивает фон в заданный цвет, если установлен (доступно использование макросов) (по-умолчанию: null)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "borderColor"              │ if set, draw border with specified color (macros allowed) (default: null)
-     │                            │ окрашивает границу в заданный цвет, если установлен (доступно использование макросов) (по-умолчанию: null)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "shadow"                   │ shadow settings, defaults:
-     │                            │ настройки тени, значение по умолчанию: 
-     │                            │
-     │                            │ "shadow": { "distance": 0, "angle": 0, "color": "0x000000", "alpha": 75, "blur": 2, "strength": 1 }
-     │----------------------------│--------------------------------------------------------------------------
-     │ "distance"                 │ distance shadow, in pixels (default: 0)
-     │                            │ дистанция тени, в пикселях (по-умолчанию: 0)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "angle"                    │ angle shadow (0.0 .. 360.0) (default: 0)
-     │                            │ угол смещения тени, в градусах (по-умолчанию: 0)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "color"                    │ color shadow ("0xXXXXXX") (default: "0x000000")
-     │                            │ цвет тени ("0xXXXXXX") (по-умолчанию: "0x000000")
-     │----------------------------│--------------------------------------------------------------------------
-     │ "alpha"                    │ shadow alpha (0 .. 100) (default: 75)
-     │                            │ прозрачность тени (0 .. 100) (по-умолчанию: 75)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "blur"                     │ blur shadow (0.0 .. 255.0) (default: 2)
-     │                            │ эффект размывки тени (0.0 .. 255.0) (по-умолчанию: 2)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "strength"                 │ strength shadow (0.0 .. 255.0) (default: 1)
-     │                            │ интенсивность тени (0.0 .. 255.0) (по-умолчанию: 1)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "currentFieldDefaultStyle" │ it applies global style to HTML in "format"; note, that defined font attributes in "format" override those in "currentFieldDefaultStyle"
-     │                            │ применяет глобальный стиль HTML в "format"; обратите внимание, что определенные атрибуты шрифта в "format" переопределяют "currentFieldDefaultStyle"
-     │                            │ field default styles, defaults:
-     │                            │ стандартный стиль поля, значение по умолчанию:
-     │                            │
-     │                            │ "currentFieldDefaultStyle": { "name": "$FieldFont", "color": "0xFFFFFF", "size": 12, "align": "left", "bold": false, "italic": false, "underline": false, "display": "block", "leading": 0, "marginLeft": 0, "marginRight": 0 },
-     │----------------------------│--------------------------------------------------------------------------
-     │ "name"                     │ font name (default: "$FieldFont")
-     │                            │ наименование шрифта (по-умолчанию: "$FieldFont")
-     │----------------------------│--------------------------------------------------------------------------
-     │ "color"                    │ font color ("0xXXXXXX") (default: "0xFFFFFF")
-     │                            │ цвет шрифта ("0xXXXXXX") (по-умолчанию: "0xFFFFFF")
-     │----------------------------│--------------------------------------------------------------------------
-     │ "size"                     │ font size (default: 12)
-     │                            │ размер шрифта (по-умолчанию: 12)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "align"                    │ text alignment (left, center, right) (default: "left")
-     │                            │ выравнивание текста (left, center, right) (по-умолчанию: "left")
-     │----------------------------│--------------------------------------------------------------------------
-     │ "bold"                     │ true - bold (default: false)
-     │                            │ true - жирный (по-умолчанию: false)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "italic"                   │ true - italic (default: false)
-     │                            │ true - курсив (по-умолчанию: false)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "underline"                │ true - underline (default: false)
-     │                            │ true - подчеркивание (по-умолчанию: false)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "display"                  │ defines how element must be showed (inline, block [default], none) 
-     │                            │ указывает как именно элемент должен быть показан (inline, block [по-умолчанию], none)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "leading"                  │ space between lines, similarly (<textformat leading='-XX'>...</textformat>) (default: 0)
-     │                            │ пространство между строками, аналогично (<textformat leading='-XX'>...</textformat>) (по-умолчанию: 0)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "marginLeft"               │ indent left, similarly (<textformat lefMargin='XX'>...</textformat>) (default: 0)
-     │                            │ отступ слева, аналогично (<textformat lefMargin='XX'>...</textformat>) (по-умолчанию: 0)
-     │----------------------------│--------------------------------------------------------------------------
-     │ "marginRight"              │ indent left, similarly (<textformat rightMargin='XX'>...</textformat>) (default: 0)
-     │                            │ отступ справа, аналогично (<textformat rightMargin='XX'>...</textformat>) (по-умолчанию: 0)
-     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "format"                   │ displayed text field data (HTML allowed, macros allowed) (default: "")
-     │                            │ отображаемые данные в текстовых полях (доступно использование HTML и макросов) (по-умолчанию: "")
-     └────────────────────────────┴──────────────────────────────────────────────────────────────────────────
-    */
-    "winChance": {
-      "enabled": false,
-      "updateEvent": "ON_VEHICLE_DESTROYED",
-      "x": 230,
-      "y": 2,
-      "width": 50,
-      "height": 20,
-      "autoSize": "left",
-      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
-      "currentFieldDefaultStyle": { "color": "0xF4EFE8", "size": 15 },
-      "format": "{{xvm-stat?{{l10n:Chance to win}}: {{chancesStatic}}{{chancesStatic?&nbsp;/&nbsp;|}}{{chancesLive}}}}"
+    "hitlogHeader": {
+      "enabled": true,
+      "updateEvent": "ON_DAMAGE_CAUSED, ON_PANEL_MODE_CHANGED",
+      "x": "{{pp.mode=0?5|{{py:math.sum({{pp.widthLeft}},50)}}}}",
+      "y": "{{pp.mode=0?65|40}}",
+      "width": 500,
+      "height": 1000,
+      "textFormat": { "color": "0xF4EFE8", "size": 15 },
+      "format": "{{hitlog-header}}"
+      // Format of the full hitlog (header and body)
+      // Формат полного хит-лога (шапка и тело)
+      // "format": "{{hitlog-header}}\n{{hitlog-body}}"
     },
+    "hitlogBody": {
+      "enabled": true,
+      "hotKeyCode": 56, "onHold": "true", "visibleOnHotKey": false,
+      "updateEvent": "ON_DAMAGE_CAUSED, ON_PANEL_MODE_CHANGED",
+      "x": "{{pp.mode=0?5|{{py:math.sum({{pp.widthLeft}},50)}}}}",
+      "y": "{{pp.mode=0?85|60}}",
+      "width": 500,
+      "height": 1000,
+      "textFormat": { "color": "0xF4EFE8", "size": 15 },
+      "format": "{{hitlog-body}}"
+    },
+    // Total hp indicator.
+    // Индикатор общего HP команд.
     "totalHP": {
-      "enabled": false,
-      "updateEvent": "ON_PLAYERS_HP_CHANGED",
+      "enabled": true,
+      "updateEvent": "PY(ON_UPDATE_HP)",
       "x": 0,
       "y": 30,
-      "width": 200,
-      "height": 40,
-      "autoSize": "center",
+      "screenHAlign": "center",
       "align": "center",
       "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
-      "currentFieldDefaultStyle": { "color": "0xF4EFE8", "size": 18 },
-      "format": "{{py:xvm.total_hp.text()}}"
+      "textFormat": { "font": "mono", "size": 18, "align": "center" },
+      "format": "{{py:xvm.total_hp.text}}"
     },
-    "test": {
+    // Avg damage on current vehicle.
+    // Средний урон на текущей технике.
+    "avgDamage": {
       "enabled": true,
-      "y": -170,
-      "width": 200,
-      "height": 50,
-      "alpha": 70, 
-      "autoSize": "center",
-      "align": "center", 
-      "valign": "bottom",
-      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "strength": 25},
-      "currentFieldDefaultStyle": { "color": "{{battleType=1?0x00FFFF|0xFFFF00}}", "size": 25, "align": "center", "bold": true, "leading": -1, "marginLeft": 2, "marginRight": 2 },
-      "format": "This is a demo of XVM text fields on battle interface. You may disable it in battle.xc<br/> Press '<font color='#60FF00'>J</font>' hot-key to show info field"
+      "updateEvent": "PY(ON_UPDATE_HP)",
+      "x": -170,
+      "y": 30,
+      "screenHAlign": "center",
+      "align": "right",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
+      "textFormat": { "size": 15, "align": "center" },
+      "format": "{{py:xvm.total_hp.avgDamage('{{l10n:avgDamage}}: ',{{hitlog.dmg-total}})}}"
     },
-    "test2": {
-      "enabled": true,
-      "hotKeyCode": 36,
-      "y": -70,
-      "width": 310,
-      "height": 50,
-      "alpha": 70, 
-      "autoSize": "none",
-      "align": "center", 
-      "valign": "bottom",
-      "bgColor": "0x000000",
-      "borderColor": "0x101009",
-      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "strength": 8},
-      "currentFieldDefaultStyle": { "color": "0x60FF00", "size": 15, "leading": -20, "marginLeft": 2, "marginRight": 2},
-      "format": "<font color='#FFFFFF'><p align='center'><b>Info text field (WN8:&nbsp;<font color='{{c:wn8}}'>{{wn8}}</font>)</b></p></font><br/>Battle tier:<font color='#ff1aff'>&nbsp;{{battletier}}</font><p align='right'>My vehicle:&nbsp;<font color='#ff1aff'>{{my-vehicle}}</font>&nbsp;(<font color='{{c:t-winrate}}'>{{t-winrate%2d}}%</font>)</p>"
-    },
-    // Shadow options.
-    // Параметры тени.
-    "shadow": {
-      "alpha": 60,         // Прозрачность.
-      "color": "0x000000", // Цвет.
-      "angle": 0,          // Угол смещения.
-      "distance": 0,       // Дистанция смещения.
-      "blur": 3,           // Размытие.
-      "strength": 5        // Интенсивность.
-    },
-    "shadow_healthBar": {
-      "$ref": { "path": "def.shadow" },
-      "alpha": 80,         // Прозрачность.
-      "blur": 2,           // Размытие.
-      "strength": 2        // Интенсивность.
-    },
-    "shadow_healthBar_background": {
-      "$ref": { "path": "def.shadow" },
-      "alpha": 60,         // Прозрачность.
-      "blur": 1,           // Размытие.
-      "strength": 1        // Интенсивность.
-    },
-    
-    // Очки прочности союзников.
-    "totalHPally": {
-      "enabled": true,
-      "updateEvent": "ON_PLAYERS_HP_CHANGED",
-      "x": -305,
-      "y": 1,
-      "width": 200,
-      "height": 40,
-      "autoSize": "right",
-      "align": "center",
-      "shadow": ${"def.shadow"},
-      "currentFieldDefaultStyle": { "color": "0xFFFFFF", "size": 20 },
-      "format": "<font face='$TitleFont'>{{py:nelx.total_hp(0)}}</font>"
-    },
-    // Очки прочности противников.
-    "totalHPenemy": {
-      "$ref": { "path": "def.totalHPally" },
-      "x": 305,
-      "autoSize": "left",
-      "format": "<font face='$TitleFont'>{{py:nelx.total_hp(1)}}</font>"
-    },
-
-    // ПОЛОСА ОЧКОВ ПРОЧНОСТИ.
-    // Союзников.
-    "healthBarAlly": {
-      "enabled": true,
-      "updateEvent": "ON_PLAYERS_HP_CHANGED",
-      "x": -140,
-      "y": 7,
-      "width": 200,
-      "height": 40,
-      "autoSize": "right",
-      "align": "center",
-      "shadow": ${"def.shadow_healthBar"},
-      "currentFieldDefaultStyle": { "color": "{{.colors.system.ally_alive}}", "size": 16 },
-      "format": "{{py:nelx.total_hp.healthBar(0)}}"
-    },
-    // Противников.
-    "healthBarEnemy": {
-      "$ref": { "path": "def.healthBarAlly" },
-      "x": 140,
-      "autoSize": "left",
-      "currentFieldDefaultStyle": { "color": "{{.colors.system.enemy_alive}}", "size": 16 },
-      "format": "{{py:nelx.total_hp.healthBar(1)}}"
-    },
-
-    // ФОН ДЛЯ ПОЛОСЫ ОЧКОВ ПРОЧНОСТИ.
-    // Союзников.
-    "healthBar_backgroundAlly": {
-      "enabled": true,
-      "x": -140,
-      "y": 7,
-      "width": 200,
-      "height": 40,
-      "autoSize": "right",
-      "align": "center",
-	  "alpha": 30,
-      "shadow": ${"def.shadow_healthBar_background"},
-      "currentFieldDefaultStyle": { "color": "0x000000", "size": 16 },
-      "format": "{{py:nelx.total_hp.healthBar_background(0)}}"
-    },
-    // Противников.
-    "healthBar_backgroundEnemy": {
-      "$ref": { "path": "def.healthBar_backgroundAlly" },
-      "x": 140,
-      "autoSize": "left",
-      "format": "{{py:nelx.total_hp.healthBar_background(1)}}"
-    },
-    
-    // Индикатор, перемещяющийся в зависимости от перевеса ХП.
-    "superiority": {
-      "enabled": true,
-      "updateEvent": "ON_PLAYERS_HP_CHANGED",
-      "x": 1,
-      "y": 24,
-      "width": 200,
-      "height": 40,
-      "autoSize": "center",
-      "align": "center",
-      "shadow": ${"def.shadow"},
-      "currentFieldDefaultStyle": { "color": "0xF4EFE8", "size": 24 },
-      "format": "<font face='$TitleFont' color='#{{py:nelx.total_hp.color()}}'>{{py:nelx.total_hp.superiority()}}</font>"
-    },
-    
-    // Процент, на который лидирующая команда превосходит проигрывающую по очкам прочности.
-    "superiority_text": {
-      "enabled": false,
-      "updateEvent": "ON_PLAYERS_HP_CHANGED",
-      "x": 0,
-      "y": 40,
-      "width": 200,
-      "height": 40,
-      "autoSize": "center",
-      "align": "center",
-      "shadow": ${"def.shadow"},
-      "currentFieldDefaultStyle": { "color": "0xF4EFE8", "size": 14 },
-      "format": "<font face='$TitleFont'>{{py:nelx.total_hp.superiority_text()}}</font>"
-    },
-	
-    // Урон до получения медали "Основной Калибр".
+    // Threshold necessary for achievements "High caliber".
+    // Порог необходимый для получения достижения "Основной калибр".
     "mainGun": {
       "enabled": true,
-      "updateEvent": "ON_PLAYERS_HP_CHANGED",
-      "x": 360,
-      "y": -2,
-      "width": 200,
-      "height": 40,
-      "autoSize": "left",
-      "align": "center",
-      "shadow": ${"def.shadow"},
-      "currentFieldDefaultStyle": { "color": "0xFFFFAB", "size": 18 },
-      "format": "<font face='$TitleFont'>{{py:nelx.mainGun()}}</font>"
+      "updateEvent": "PY(ON_UPDATE_HP)",
+      "x": 170,
+      "y": 30,
+      "screenHAlign": "center",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
+      "textFormat": { "size": 15, "align": "center" },
+      "format": "{{py:xvm.total_hp.mainGun('{{l10n:mainGun}}: ',{{hitlog.dmg-total}})}}"
     },
-
-    // Процент нанесенного урона.
-    "damagePercent": {
+    // Chance of winning.
+    // Шанс на победу.
+    "winChance": {
+      "enabled": false,
+      "updateEvent": "PY(ON_UPDATE_HP)",
+      "x": 230,
+      "y": 2,
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
+      "textFormat": { "size": 15 },
+      "format": "{{xvm-stat?{{l10n:Team strength}}: {{py:xvm.team_strength('{{allyStrengthStatic}}','{{enemyStrengthStatic}}')}} / {{py:xvm.team_strength('{{allyStrengthLive}}','{{enemyStrengthLive}}')}}}}"
+    },
+    // Log of the received damage (see damageLog.xc).
+    // Лог полученного урона (см. damageLog.xc).
+    "damageLog": {
+      "enabled": false,
+      "updateEvent": "PY(ON_HIT)",
+      "x": "{{py:xvm.damageLog.dLog_x}}",
+      "y": "{{py:xvm.damageLog.dLog_y}}",
+      "width": 300,
+      "height": 210,
+      "screenVAlign": "bottom",
+      "shadow": { 
+        "distance": "{{py:xvm.damageLog.dLog_shadow('distance')}}",
+        "angle": "{{py:xvm.damageLog.dLog_shadow('angle')}}",
+        "color": "{{py:xvm.damageLog.dLog_shadow('color')}}",
+        "alpha": "{{py:xvm.damageLog.dLog_shadow('alpha')}}",
+        "blur": "{{py:xvm.damageLog.dLog_shadow('blur')}}",
+        "strength": "{{py:xvm.damageLog.dLog_shadow('strength')}}",
+        "hideObject": "{{py:xvm.damageLog.dLog_shadow('hideObject')}}",
+        "inner": "{{py:xvm.damageLog.dLog_shadow('inner')}}",
+        "knockout": "{{py:xvm.damageLog.dLog_shadow('knockout')}}",
+        "quality": "{{py:xvm.damageLog.dLog_shadow('quality')}}" 
+      },
+      "textFormat": { "color": "0xF4EFE8", "size": 16},
+      "format": "{{py:xvm.damageLog.dLog}}",
+      "mouseEvents": {
+        "mouseDown": "dLog_mouseDown",
+        "mouseUp": "dLog_mouseUp",
+        "mouseMove": "dLog_mouseMove"
+      }
+    },
+    // Display the last damage (hit) (see damageLog.xc).
+    // Отображение последнего урона (попадания) (см. damageLog.xc).
+    "lastHit": {
       "enabled": true,
-      "$ref": { "path": "def.mainGun" },
-      "x": -360,
+      "updateEvent": "PY(ON_LAST_HIT)",
+      "x": "{{py:xvm.damageLog.lastHit_x}}",
+      "y": "{{py:xvm.damageLog.lastHit_y}}",
+      "width": 200,
+      "height": 100,
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "shadow": { 
+        "distance": "{{py:xvm.damageLog.lastHit_shadow('distance')}}",
+        "angle": "{{py:xvm.damageLog.lastHit_shadow('angle')}}",
+        "color": "{{py:xvm.damageLog.lastHit_shadow('color')}}",
+        "alpha": "{{py:xvm.damageLog.lastHit_shadow('alpha')}}",
+        "blur": "{{py:xvm.damageLog.lastHit_shadow('blur')}}",
+        "strength": "{{py:xvm.damageLog.lastHit_shadow('strength')}}",
+        "hideObject": "{{py:xvm.damageLog.lastHit_shadow('hideObject')}}",
+        "inner": "{{py:xvm.damageLog.lastHit_shadow('inner')}}",
+        "knockout": "{{py:xvm.damageLog.lastHit_shadow('knockout')}}",
+        "quality": "{{py:xvm.damageLog.lastHit_shadow('quality')}}" 
+      },
+      "textFormat": {"align": "center", "color": "0xF4EFE8", "size": 16 },
+      "format": "{{py:xvm.damageLog.lastHit}}",
+      "mouseEvents": {
+        "mouseDown": "lastHit_mouseDown",
+        "mouseUp": "lastHit_mouseUp",
+        "mouseMove": "lastHit_mouseMove"
+      }
+    },
+    "fire": {
+      "enabled": false,
+      "updateEvent": "PY(ON_FIRE)",
+      "x": 120,
+      "y": 200,
+      "width": 200,
+      "height": 100,
+      "alpha": "{{py:xvm.damageLog.fire}}",
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
+      "textFormat": {"align": "center", "color": "0xF4EFE8", "size": 16 },
+      "format": "ПОЖАР"
+    },
+    "totalEfficiency": {
+      "enabled": true,
+      "updateEvent": "PY(ON_TOTAL_EFFICIENCY)",
+      "x": 240,
+      "y": -2,
+      "width": 300,
+      "height": 22,
+      "screenVAlign": "top",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
+      "textFormat": { "color": "0xE3E3E3", "size": 16 },
+      "format": "<textformat tabstops='[65,130,196]' leading='-2' ><img src='xvm://res/icons/Efficiency/damage.png'> {{py:xvm.totalDamage}}<tab><img src='xvm://res/icons/Efficiency/assist.png'> {{py:xvm.totalAssist}}<tab><img src='xvm://res/icons/Efficiency/reflect.png'> {{py:xvm.totalBlocked}}<tab><img src='xvm://res/icons/Efficiency/discover.png'> {{py:xvm.detection}}</textformat>"
+    },
+    "angleAimingLeft": {
+      "enabled": true,
+      "updateEvent": "PY(ON_ANGLES_AIMING)",
+      "x": "{{py:xvm.anglesAiming_xLeft}}",
+      "y": "{{py:xvm.anglesAiming_y}}",
+      //image width + 2px //17+2=19	//17+4=21
+      "width": 21,
+      //image height + 2px //64+2=66	//49+4=53
+      "height": 53,
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "format": "{{py:xvm.anglesAiming_xLeft>-5?<img src='xvm://res/angle_LL.png'>|<img src='xvm://res/angle_L.png'>}}"
+    },
+    "angleAimingRight": {
+      "enabled": true,
+      "updateEvent": "PY(ON_ANGLES_AIMING)",
+      "x": "{{py:xvm.anglesAiming_xRight}}",
+      "y": "{{py:xvm.anglesAiming_y}}",
+      "width": 21,
+      "height": 53,
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "format": "{{py:xvm.anglesAiming_xRight<5?<img src='xvm://res/angle_RL.png'>|<img src='xvm://res/angle_R.png'>}}"
+    }, 
+    "angleAimingBottom": {
+      "enabled": true,
+      "updateEvent": "PY(ON_ANGLES_AIMING)",
+      "x": 0,
+      "y": "{{py:xvm.anglesAiming_yBottom}}",
+      //image width + 2px //191+2=193	//191+4=195
+      "width": 195,
+      //image height + 2px //27+2=29	//27+4=31
+      "height": 31,
+      "alpha" : "{{py:xvm.anglesAiming_yBottom<250?{{py:math.sub(250, {{py:xvm.anglesAiming_yBottom}})}}|0}}",
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "format": "<img src='xvm://res/angle_Bottom.png'>"
+    }, 
+    "angleAimingTop": {
+      "enabled": true,
+      "updateEvent": "PY(ON_ANGLES_AIMING)",
+      "x": 0,
+      "y": "{{py:xvm.anglesAiming_yTop}}",
+      "width": 197,
+      "height": 29,
+      "alpha" : "{{py:xvm.anglesAiming_yTop>-350?{{py:math.sum({{py:xvm.anglesAiming_yTop}}, 350)}}|0}}",
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "format": "<img src='xvm://res/angle_Top.png'>"
+    },
+    "damageIndicator": {
+      "enabled": true,
+      "updateEvent": "PY(ON_DAMAGE_INDICATOR)",
+      "x": 0,
+      "y": 65,
+      "width": 365,
+      "height": 90,
+      "alpha": "{{py:xvm.damageIndicator}}",
+      "screenHAlign": "center",
+      "format": "<img src='xvm://res/{{py:xvm.damageIndicator_aim|CentrDI}}.png'>"
+    },
+    "infoPanel0": {
+      "enabled": true,
+      "updateEvent": "PY(ON_INFO_PANEL)",
+      "x": -110,
+      "y": 150,
+      "width": 250,
+      "height": 250,
+      "align": "center",
+      "valign": "center",
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "shadow": { "enabled": true, "distance": 1, "angle": 90, "color": "0x000000", "alpha": 80, "blur": 5, "strength": 2 },
+      "textFormat": { "font": "$FieldFont", "size": 14, "color": "0xFCFCFC", "align": "left", "leading": -12 },
+      "format": "{{py:infoPanelFormat(0)}}"
+    },
+    "infoPanel1": {
+      "enabled": true,
+      "updateEvent": "PY(ON_INFO_PANEL)",
+      "x": 0,
+      "y": 150,
+      "width": 200,
+      "height": 100,
+      "align": "center",
+      "valign": "center",
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "shadow": { "enabled": true, "distance": 1, "angle": 90, "color": "0x000000", "alpha": 80, "blur": 5, "strength": 2 },
+      "textFormat": { "font": "$TitleFont", "size": 15, "align": "center", "leading": -12 },
+      "format": "{{py:infoPanelFormat(1)}}"
+    },
+    "infoPanel2": {
+      "enabled": true,
+      "updateEvent": "PY(ON_INFO_PANEL)",
+      "x": 300,
       "y": 0,
-      "autoSize": "right",
-      "format": "<font face='$TitleFont'>{{py:nelx.damagePercent()}}</font>"
+      "width": 200,
+      "height": 100,
+      "align": "right",
+      "valign": "center",
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "shadow": { "enabled": true, "distance": 1, "angle": 90, "color": "0x000000", "alpha": 80, "blur": 5, "strength": 2 },
+      "textFormat": { "font": "$FieldFont", "size": 12, "align": "left", "leading": -10 },
+      "format": "{{py:infoPanelFormat(2)}}"
+    },
+    "infoPanel3": {
+      "enabled": true,
+      "updateEvent": "PY(ON_INFO_PANEL)",
+      "x": -110,
+      "y": 150,
+      "width": 250,
+      "height": 250,
+      "align": "center",
+      "valign": "center",
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "shadow": { "enabled": true, "distance": 1, "angle": 90, "color": "0x000000", "alpha": 80, "blur": 5, "strength": 2 },
+      "textFormat": { "font": "$FieldFont", "size": 14, "color": "0xFCFCFC", "align": "left", "leading": -12 },
+      "format": "{{py:infoPanelFormat(3)}}"
     }
+//    "AimPos": {
+//      "Enabled": true,
+//      "UpdateEvent": "ON_EVERY_SECOND",
+//      "Alpha": 0,
+//      "format": "{{py:xvm.aimpos}}"
+//    }
   }
 }

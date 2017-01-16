@@ -1,0 +1,17 @@
+﻿{
+  "infoPanel": {
+    "delay": 5,
+    "altKey": 56,
+    "formats": [
+      "{{vehicle_name}}
+      <br/>{{gun_reload_equip}}с
+      <br/><img src='img://gui/maps/icons/vehicle/{{icon_system_name}}.png'>
+      <br/><textformat tabstops='[95]'>Масса: {{vehicle_weight}}т<tab>Обзор: {{vision_radius}}м</textformat>
+      <br/><textformat tabstops='[65,105,145]'>Корпус:<tab>{{armor_hull_front}}<tab>{{armor_hull_side}}<tab>{{armor_hull_back}}</textformat>
+      <br/><textformat tabstops='[65,105,145]'>Башня:<tab>{{armor_turret_front}}<tab>{{armor_turret_side}}<tab>{{armor_turret_back}}</textformat>
+      <br/><textformat tabstops='[65,105,145]'>Тип:<tab>{{shell_type_1}}<tab>{{shell_type_2}}<tab>{{shell_type_3}}</textformat>
+      <br/><textformat tabstops='[65,105,145]'>Пробитие:<tab>{{shell_power_1}}<tab>{{shell_power_2}}<tab>{{shell_power_2}}</textformat>
+      <br/><textformat tabstops='[65,105,145]'>Урон:<tab>{{shell_damage_1}}<tab>{{shell_damage_2}}<tab>{{shell_damage_3}}</textformat>"
+    ]
+  }
+}

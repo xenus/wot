@@ -1,7 +1,10 @@
 -1	..\.	.	*.????
 -2	..\.\install\	install\
 -1	..\.	install\xDistr\	do.install
--2	..\.\res_mods\9.9.99\	res_mods\%_mod_ver%\
+-2	..\.\res_mods\9.9.99\	res_mods\%_mod_ver2%\
 -2	..\.\res_mods\configs\	res_mods\configs\	*.xc
 -2	..\.\res_mods\configs\	res_mods\configs\	*.py
+-2	..\.\res_mods\configs\	res_mods\configs\	*.png
+-2	..\.\res_mods\configs\	res_mods\configs\	*.xml
+-2	..\.\res_mods\configs\	res_mods\configs\	*.xndiff
 -2	..\.\res_mods\mods\	res_mods\mods\

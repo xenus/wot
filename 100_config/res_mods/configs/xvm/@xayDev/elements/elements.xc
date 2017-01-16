@@ -7,37 +7,36 @@
     // Interface elements
     // Элементы интерфейса
     "true": [
-	// Players panels
-	// Панели игроков (уши)
-	${"snippet-playersPanel.xc":"."},
-	// Sixth sense lamp
-	// Лампа шестого чувства
-	${"snippet-sixthSenseIndicator.xc":"."},
-	// Battle timer
-	// Таймер боя
-	${"snippet-battleTimer.xc":"."},
-	// Minimap
-	// Миникарта
-	${"snippet-minimap.xc":"."},
-	// Debug panel (ping/lag/fps)
-	// Панель пинга/лага/фпс
-	${"snippet-debugPanel.xc":"."},
-	// Battle score
-	// Счёт боя
-	${"snippet-fragCorrelationBar.xc":"."},
-	// Capture bar
-	// Полоса захвата баз
-	${"snippet-teamBasesPanel.xc":"."},
-	// Chat
-	// Чат
-	${"snippet-messenger.xc":"."},
-	// Kill-log
-	// Килл-лог (лог убитых)
-	${"snippet-messenger.xc":"."},
-	// Ammo bar
-	// Панель снарядов и расходников
-	${"snippet-consumablesPanel.xc":"."}
+    {
+      // Players panels
+      // Панели игроков (уши)
+      "playersPanel": ${"snippet-playersPanel.xc":"."}
+      // Лампа шестого чувства
+      // Sixth sense lamp
+//      "sixthSense": ${"snippet-sixthSenseIndicator.xc":"."}
+      }
 	],
     "false": [
 	]
 }
+    /*
+    "battleDamageLogPanel" - Панель: Обратная связь - Урон  / Panel: Feedback - Damage
+    "battleMessenger"      - Чат                            / Chat
+    "battleTicker"         - ?                              / ?
+    "battleTimer"          - Таймер боя                     / Battle timer
+    "consumablesPanel"     - Панель снарядов и расходников  / Ammo bar
+    "damageInfoPanel"      - ?                              / ?
+    "damagePanel"          - Панель повреждений             / Damage panel
+    "debugPanel"           - Панель пинга/лага/фпс          / Debug panel (ping/lag/fps)
+    "destroyTimersPanel"   - ?                              / ?
+    "endWarningPanel"      - Панель оповещяющая о конце боя / Panel informing about the imminent end of the battle
+    "fragCorrelationBar"   - Счёт боя                       / Battle score
+    "fullStats"            - ?                              / ?
+    "minimap"              - Миникарта                      / Minimap
+    "playersPanel"         - Панели игроков (уши)           / Players panels
+    "prebattleTimer"       - Таймер до начала боя           / Timer before a battle start
+    "radialMenu"           - Радиальное меню                / Radial menu
+    "ribbonsPanel"         - Ленты боевой эффективности     / Battle performance badges
+    "sixthSense"           - Лампа шестого чувства          / Sixth sense lamp
+    "teamBasesPanelUI"     - Полоса захвата баз             / Capture bar
+    */

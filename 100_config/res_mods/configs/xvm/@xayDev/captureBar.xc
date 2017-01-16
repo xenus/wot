@@ -3,23 +3,26 @@
  * Полоса захвата.
  */
 {
+  // Shadow options
+  // Параметры тени
   "shadow": {
-    // Цвет.
-    "color": "0x000000",
-    // Opacity 0-100
-    // Прозрачность 0-100
-    "alpha": 65,
-    // Blur 0-255; 6 is recommended
-    // Размытие 0-255; 6 рекомендовано
-    "blur": 4,
-    // Intensity 0-255; 3 is recommended
-    // Интенсивность 0-255; 3 рекомендовано
-    "strength": 4
+    // false - no shadow
+    // false - без тени
+    "enabled": true,
+    "distance": 0,             // (in pixels)     / offset distance / дистанция смещения
+    "angle": 0,                // (0.0 .. 360.0)  / offset angle    / угол смещения
+    "color": "0x000000",       // "0xXXXXXX"      / color           / цвет
+    "alpha": 65,               // (0 .. 100)      / opacity         / прозрачность
+    "blur": 4,                 // (0.0 .. 255.0)  / blur            / размытие
+    "strength": 4              // (0.0 .. 255.0)  / intensity       / интенсивность
   },
   "captureBar": {
     // false - Disable
     // false - Отключить
     "enabled": true,
+    // Y value (34 for vanilla client)
+    // Значение Y (34 для чистого клиента)
+    "y": 65,
     // Change the distance between capture bars
     // Изменение расстояния между полосами захвата
     "distanceOffset": -20,
@@ -47,8 +50,8 @@
         // Full capture text format
         // Формат текста при полном захвате
         "done": "<b><font size='17' color='#FFFFFF'>{{cap.points}}%</font></b>",
-        // Fields shadow
-        // Тень полей
+        // Shadow options
+        // Параметры тени
         "shadow": ${ "shadow" }
       },
       // Vehicles count textfield (upper-left)

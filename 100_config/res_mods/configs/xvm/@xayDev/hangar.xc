@@ -4,7 +4,7 @@
  */
 {
   "hangar": {
-    "masteryMarkInTankCarousel": true,
+//?    "masteryMarkInTankCarousel": true,
     // true - Show XWN8 instead of XEFF in company windows
     // true - показывать XWN8 вместо XEFF в окнах рот
     "xwnInCompany": true,
@@ -32,6 +32,9 @@
     // true - Return crew check box is selected by default
     // true - Включить галочку возврата экипажа по умолчанию
     "crewReturnByDefault": false,
+    // Number of perks to show without grouping
+    // Количество перков, которые отображаются без группировки
+    "crewMaxPerksCount": 8,
     // true - Show flags in barracks
     // true - Показывать флаги в казарме
     "barracksShowFlags": true,
@@ -46,10 +49,10 @@
     "blockVehicleIfLowAmmo": true,
     // Below this percentage, ammo is low. (0 - 100)
     // Ниже этого процента, снарядов считается мало. (0 - 100)
-    "lowAmmoPercentage": 50,    
-    // true - Hide price button in tech tree
-    // true - Прятать кнопку с ценой в дереве исследований
-    "hidePricesInTechTree": false,
+    "lowAmmoPercentage": 50,
+//?    // true - Hide price button in tech tree
+//?    // true - Прятать кнопку с ценой в дереве исследований
+//?    "hidePricesInTechTree": false,
     // true - Enable widgets
     // true - включить виджеты
     "widgetsEnabled": true,
@@ -87,9 +90,9 @@
       // Leading between lines.
       // Пространство между строками
       "leading": 0,
-      // true - place at top of other windows, false - at bottom.
-      // true - отображать поверх остальных окон, false - под.
-      "topmost": true,
+      // layer - "bottom", "normal" (default), "top".
+      // слой - "bottom", "normal" (по-умолчанию), "top".
+      "layer": "normal",
       // true - show title "Ping"
       // true - показывать заголовок "Пинг"
       "showTitle": true,
@@ -147,15 +150,18 @@
         // Values above define bad response
         // Значения более считаются плохим откликом
       },
+      // Shadow options
       // Параметры тени
       "shadow": {
+        // false - no shadow
+        // false - без тени
         "enabled": true,
-        "color": "0x000000",
-        "distance": 0,
-        "angle": 0,
-        "alpha": 70,
-        "blur": 4,
-        "strength": 2
+        "distance": 0,             // (in pixels)     / offset distance / дистанция смещения
+        "angle": 0,                // (0.0 .. 360.0)  / offset angle    / угол смещения
+        "color": "0x000000",       // "0xXXXXXX"      / color           / цвет
+        "alpha": 70,               // (0 .. 100)      / opacity         / прозрачность
+        "blur": 4,                 // (0.0 .. 255.0)  / blur            / размытие
+        "strength": 2              // (0.0 .. 255.0)  / intensity       / интенсивность
       }
     },
     "onlineServers": {
@@ -187,9 +193,9 @@
       // Leading between lines.
       // Пространство между строками
       "leading": 0,
-      // true - place at top of other windows, false - at bottom.
-      // true - отображать поверх остальных окон, false - под.
-      "topmost": true,
+      // layer - "bottom", "normal" (default), "top".
+      // слой - "bottom", "normal" (по-умолчанию), "top".
+      "layer": "normal",
       // true - show title "Online"
       // true - показывать заголовок "Онлайн"
       "showTitle": true,
@@ -241,12 +247,13 @@
         //below this value the queue might be long
         //ниже этого значения очередь может быть долгой
       },
+      // Shadow options
       // Параметры тени
       "shadow": {
         "enabled": true,
-        "color": "0x000000",
         "distance": 0,
         "angle": 0,
+        "color": "0x000000",
         "alpha": 70,
         "blur": 4,
         "strength": 2
@@ -264,10 +271,28 @@
       // Rotation in degrees [0..360].
       // Угол поворота в градусах [0..360].
       "rotation": 0,
+      // Shift X position
+      // Сдвиг по оси X
+      "shiftX": 0,
       // Shift Y position
       // Сдвиг по оси Y
       "shiftY": 0
     },
+    // Show "Buy premium" button
+    // Показать кнопку "Купить премиум"
+    "showBuyPremiumButton": false,
+    // Show "Premium shop" button
+    // Показать кнопку "Премиум магазин"
+    "showPremiumShopButton": false,
+    // Behavior of the system channel notifications button on new notifications:
+    //   none - do nothing
+    //   blink - blink button
+    //   full - blink and show counter (default client behavior)
+    // Поведение кнопки оповещений системного канала при новых оповещениях:
+    //   none - ничего не делать
+    //   blink - мигать кнопкой
+    //   full - мигать и показать счетчик (поведение клиента по-умолчанию)
+    "notificationsButtonType": "full",
     // Parameters for tank carousel
     // Параметры карусели танков
     "carousel": ${"carousel.xc":"carousel"},

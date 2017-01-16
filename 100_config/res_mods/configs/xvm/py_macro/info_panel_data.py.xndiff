@@ -1,0 +1,9 @@
+--- info_panel_data.py
++++ info_panel_data.py
+@@ -3,0 +4 @@
++from BigWorld import player
+@@ -246,0 +248,3 @@
++
++def self_vehicle_weight():
++    return "%i" % (round(player().getVehicleAttached().typeDescriptor.physics['weight'] / 1000, 1))
+\ No newline at end of file

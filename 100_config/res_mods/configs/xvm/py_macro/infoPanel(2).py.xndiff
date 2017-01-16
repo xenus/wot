@@ -1,0 +1,8 @@
+--- infoPanel.py
++++ infoPanel.py
+@@ -71 +71 @@
+-        if hotKeyPressed:
++        if hotKeyPressed or (infoPanelConfig['AliveOnly'] and not vehicle.isAlive()):
+@@ -102 +102 @@
+-            InfoPanel.hide()
++            InfoPanel.updateBlur()

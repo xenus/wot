@@ -58,14 +58,14 @@
 
     // Config last modified.
     // Дата последней модификации конфига.
-    "date": "30.05.2016",
+    "date": "21.12.2016",
 
     // Supported version of the game.
     // Поддерживаемая версия игры.
-    "gameVersion": "0.9.15",
+    "gameVersion": "0.9.17.0.2",
     // The minimum required version of the XVM mod.
     // Минимально необходимая версия мода XVM.
-    "modMinVersion": "6.3.1.1"
+    "modMinVersion": "6.5.2"
   },
 
   "editorVersion": "0.76",
@@ -105,10 +105,6 @@
   // Общие параметры боевого интерфейса.
   "battle": ${"battle.xc":"battle"},
 
-  // Battle interface text fields
-  // Текстовые поля боевого интерфейса
-  "battleLabels": ${"battleLabels.xc":"labels"},
-
   // Frag counter panel.
   // Панель счёта в бою.
   "fragCorrelation": ${"battle.xc":"fragCorrelation"},
@@ -116,6 +112,14 @@
   // Ingame crits panel by "expert" skill.
   // Внутриигровая панель критов от навыка "эксперт".
   "expertPanel": ${"battle.xc":"expertPanel"},
+
+  // Battle interface text fields
+  // Текстовые поля боевого интерфейса
+  "battleLabels": ${"battleLabels.xc":"labels"},
+
+  // Log of the received hits.
+  // Лог полученных попаданий.
+  "damageLog": ${"damageLog.xc":"damageLog"},  
 
   // Special XVM hotkeys.
   // Специальные горячие клавиши XVM.
@@ -202,6 +206,10 @@
 
   // XMQP services settings
   // Настройки сервисов XMQP
-  "xmqp": ${"xmqp.xc":"xmqp"}
+  "xmqp": ${"xmqp.xc":"xmqp"},
+
+  // SafeShot - блокировка случайного (или специального =) ) выстрела по союзникам.
+  "safeShot": ${"safeShot.xc":"safeShot"},
+  //infoPanel - информационная панель текущей цели.
+  "infoPanel": ${"infoPanel.xc":"infoPanel"}
 }
-	
